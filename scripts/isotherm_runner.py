@@ -38,7 +38,7 @@ with open('./CONTROL', 'w') as f:
 infile = 'Cu_BTC'
 
 print(infile)
-c2c.create_config_field(infile,input_directory='.', output_directory='')
+c2c.create_config_field(infile, input_directory='interface/', output_directory='')
 
 # Set up the relevant TaskInterface object: which tells the low-level machinery in the 'task' package
 # which code will be used to perform the simulations, and how to perform various tasks specific to that
@@ -48,7 +48,7 @@ c2c.create_config_field(infile,input_directory='.', output_directory='')
 # below sets up a DL_MONTE-specific interface. Note that the interface must know the location of the 
 # DL_MONTE executable - which is specified as the argument to the DLMonteInterface constructor.
 
-interface = interface.DLMonteInterface("../../../DLMONTE-SRL.X")
+interface = interface.DLMonteInterface("/usr/local/bin/DLMONTE-SRL.X")
 
 # Set up a list of 'observables' to track and analyse. Observables must be Observable objects, and the nature
 # of Observable objects may vary between simulation codes. For DL_MONTE only observables corresponding to variables
