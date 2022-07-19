@@ -1,32 +1,28 @@
-FROM python:3.8-buster
-
-RUN apt-get update && \
-    cat /etc/apt/sources.list && \
-    apt-get -y install make && \
-    make -v && \
-    apt-get -y install wget && \
-	apt-get -y install gfortran && \
-	gfortran -v && \
-	python3 --version && \
-	pip --version && \
-	pip install scipy && \
-	pip install numpy && \
-	pip install pandas && \
-	pip install PyYAML && \
-	pip install dlmontepython && \
-	pip install ase && \
-	pip install matplotlib && \
-	pip freeze
-	
-RUN wget -q https://gitlab.com/dl_monte/DL_MONTE-2/-/archive/master/DL_MONTE-2-master.zip && \
-    unzip DL_MONTE-2-master.zip && \
-	cd DL_MONTE-2-master && \
-	bash build: SRL dir gfortranrepro -f bin/DLMONTE-SRL.X && \
-	mv bin/DLMONTE-SRL.X /run/DLMONTE-SRL.X
-
-COPY interface/*.cif /run
-COPY scripts/*.py /run
-
+FROM python:3.8-slim-buster
 WORKDIR /run
 
-CMD ["python", "isotherm_runner.py"]
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gfortran \
+    make \
+    unzip \
+    wget \
+  && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY Pipfile Pipfile
+RUN python -m pip install --no-cache-dir --upgrade pip pipenv
+RUN pipenv install --skip-lock --system --verbose && \
+    pipenv --clear
+
+# Install DLMONTE
+RUN wget -q https://gitlab.com/dl_monte/DL_MONTE-2/-/archive/master/DL_MONTE-2-master.zip && \
+    unzip DL_MONTE-2-master.zip && \
+    cd DL_MONTE-2-master && \
+      bash build: SRL dir gfortranrepro -f bin/DLMONTE-SRL.X && \
+      mv bin/DLMONTE-SRL.X /usr/local/bin/DLMONTE-SRL.X && \
+    cd .. && \
+    rm -fr DL_MONTE-2-master.zip DL_MONTE-2-master
+
+# Copy Python scripts to image
+COPY scripts/*.py /run
