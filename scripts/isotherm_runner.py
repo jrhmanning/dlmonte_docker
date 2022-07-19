@@ -38,7 +38,7 @@ with open('./CONTROL', 'w') as f:
 infile = 'Cu_BTC'
 
 print(infile)
-c2c.create_config_field(infile, input_directory='interface/', output_directory='./')
+c2c.create_config_field(infile, input_directory='interface/', output_directory='')
 
 # Set up the relevant TaskInterface object: which tells the low-level machinery in the 'task' package
 # which code will be used to perform the simulations, and how to perform various tasks specific to that
