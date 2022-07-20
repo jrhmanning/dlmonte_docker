@@ -24,7 +24,7 @@ In order to run this container you'll need docker installed.
 Currently the container will prepare a test simulation in the `/run/` directory which will run a test isotherm of Nitrogen in CuBTC (HKUST-1), outputting a graph and data file to the /interface/ directory for file I/O. This takes a little while to run (ca. 1 hour).
 
 ```shell
-docker run -v dlm_vol:/interface/ dl_monte
+docker run -v $PWD/interface/:/run/interface/ dlmonte_test python isotherm_runner.py --InputFolder=/run/interface --OutputFolder=/run/interface --Framework=Cu_BTC
 ```
 
 ## Built With
