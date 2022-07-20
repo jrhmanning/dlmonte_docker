@@ -1,6 +1,7 @@
 from ase import Atoms
 from ase.io import read
 import dlmolecule as dlm
+import pathlib
 
 # TODO: add argparsing funcionality
 # TODO: hack ASE so it imports charges
@@ -165,19 +166,23 @@ THF_envelope = dlm.DLMolecule(
 ) #Envelope THF configuration from TRAPPE
 
 
-def create_config_field(input_file,input_directory='./', output_directory='input_files/', sorbates=[Nitrogen]):
-    framework = read(f'{input_directory}/{input_file}.cif', store_tags=True)
+def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorbates=[Nitrogen]):
+    framework = read(input_file, store_tags=True)
+    sim_title = str(input_file.stem)
+    config_location = output_directory / 'CONFIG'
+    field_location = output_directory / 'FIELD'
 
-    dl_framework = dlm.from_ase(framework, input_file, UFF_LJ)
+    dl_framework = dlm.from_ase(framework, sim_title, UFF_LJ)
     config = dl_framework.make_config_empty_framework()
-    with open(f'./{output_directory}CONFIG', 'w') as f:
+    print(sim_title)
+    with open(config_location, 'w') as f:
         f.write(str(config))
 
-    with open(f'./{output_directory}FIELD', 'w') as f:
-        f.write(str(dlm.make_field(dl_framework, sorbates, sim_title=f'{input_file} + Nitrogen')))
+    with open(field_location, 'w') as f:
+        f.write(str(dlm.make_field(dl_framework, sorbates, sim_title=f'{sim_title} + Nitrogen')))
 
 
 if __name__ == "__main__":
 
     infile = 'Cu_BTC'
-    create_config_field(infile,output_directory='./', sorbates=[THF_envelope])
+    create_config_field(f'./{infile}',output_directory='./', sorbates=[THF_envelope])
