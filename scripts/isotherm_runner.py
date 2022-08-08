@@ -14,6 +14,20 @@ import cif2config as c2c
 from glob import glob
 import argparse
 import pathlib
+import json
+
+def Pa_to_katm(pressure):
+    try:
+        float(pressure)
+    except TypeError:
+        raise TypeError('Impossible to parse pressure values as floats!')
+    return presure*9.86923e-9
+
+def str_to_floats(input_string):
+    return [float(x) for x in input_string.split()]
+
+def pressure_preprocess(input_string):
+    return [Pa_to_katm(x) for x in str_to_floats(input_string)]
 
 # Set up the logger, which determines the nature of information output by the machinery in the 'task' package.
 # The code below results in logging information being output to stdout
@@ -29,27 +43,52 @@ measurement.logger.addHandler(handler)
 # Define external arguments for file input/output locations
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--InputFolder',
+parser.add_argument('-i','--InputFolder',
                     type=str,
                     action='store',
-                    required=True,
+                    required=False,
                     metavar='INPUT_FOLDER',
+                    default='.',
                     help='Location of the framework CIF files.')
 
-parser.add_argument('--OutputFolder',
+parser.add_argument('-o','--OutputFolder',
                     type=str,
                     action='store',
-                    required=True,
+                    required=False,
                     metavar='OUTPUT_FOLDER',
+                    default='.',
                     help='Intended location for output files.')
 
-parser.add_argument('--Framework',
+parser.add_argument('-f','--Framework',
                     type=str,
                     action='store',
                     required=True,
                     metavar='Framework',
                     help='Name of the framework used (and associated .cif file).')
 
+parser.add_argument('-c', '--Composition',
+                    type=str,
+                    action='store',
+                    type=json.loads,
+                    required=False,
+                    metavar='OUTPUT_FOLDER',
+                    default = '{\\\"Nitrogen\\\": 1.0})',
+                    help='Gas composition, as a string json object (e.g. {\\\"CO2\\\": 1.0}).')
+parser.add_argument('-t','--Temperature',
+                    type=float,
+                    action='store',
+                    required=False,
+                    metavar='Framework',
+                    default=298.0,
+                    help='Specified temperature (in K).')
+parser.add_argument('-p','--Pressures',
+                    type=str,
+                    action='store',
+                    required=False,
+                    metavar='Framework',
+                    type = pressure_preprocess,
+                    default="1e-15,1e-14,1e-13,1e-12,1e-11,1e-10,1e-9,1e-8,1e-7,1e-6,1e-5,1e-4,1e-3,1e-2",
+                    help='Specified pressures in Pa as comma-separates string (e.g. \"1,2\").')
 args = parser.parse_args()
 
 # Now let's set up the paths to the input and output directories, and check they exist
@@ -70,6 +109,8 @@ with open(control_location, 'w') as f:
     f.write(str(control_obj))
 
 # Set up the FIELD and CONFIG files from the generator in cif2config.
+#TODO: add different sorbate functionality
+#TODO: add different sorbate functionality
 config_field_location = pathlib.Path('/run/')
 c2c.create_config_field(input_file=input_file, output_directory=config_field_location)
 

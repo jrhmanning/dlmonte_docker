@@ -2,6 +2,7 @@ from ase import Atoms
 from ase.io import read
 import dlmolecule as dlm
 import pathlib
+import sorbates
 
 # TODO: add argparsing funcionality
 # TODO: hack ASE so it imports charges
@@ -117,56 +118,8 @@ UFF_LJ = {
     'Lw_S': [5.530000, 2.883000]
 }
 
-Nitrogen = dlm.DLMolecule(
-    name='Nitrogen',
-    molecule=Atoms('NXN', positions=[(0, 0, 0), (0, 0, 0.55), (0, 0, 1.1)], tags=[0, 1, 0],
-                   charges=[-0.482, 0.964, -0.482]),
-    tags={0: 'N', 1: 'COM'},
-    potentials={0: [36, 3.31, -0.482],
-                1: [0, 0, 0.964]
-                }  # eps, sigma, q
-)
 
-THF_twisted = dlm.DLMolecule(
-    name='THF',
-    molecule=Atoms('OCCCC', positions=[
-        (0.0000000000, 0.0000000000, 0.0000000000),
-        (1.1689000000, 0.7885000000, 0.0000000000),
-        (-1.1689000000, 0.7885000000, 0.0000000000),
-        (0.7601760000, 2.2682000000, 0.1226000000),
-        (-0.7601760000, 2.2682000000, -0.1226000000)
-    ],
-                   tags=[0, 1, 1, 2, 2],
-                   charges=[-0.41, 0.16, 0.16, 0.045, 0.045]),
-
-    tags={0: 'O', 1: 'C_0', 2: 'C_C'},
-    potentials={0: [190, 2.2, -0.41],
-                1: [56.3, 3.88, 0.16],
-                2: [56.3, 3.88, 0.045]
-                }
-) #Twisted pentagon THF configuration from TRAPPE
-
-THF_envelope = dlm.DLMolecule(
-    name='THF',
-    molecule=Atoms('OCCCC', positions=[
-        (0.7700000000, 2.2290000000, 0.1925000000),
-        (-0.4115000000, 1.4840000000, 0.0000000000),
-        (1.9520000000, 1.4840000000, 0.0000000000),
-        (1.5400000000, 0.0000000000, 0.0000000000),
-        (0.0000000000, 0.0000000000, 0.0000000000)
-    ],
-                   tags=[0, 1, 1, 2, 2],
-                   charges=[-0.41, 0.16, 0.16, 0.045, 0.045]),
-
-    tags={0: 'O', 1: 'C_0', 2: 'C_C'},
-    potentials={0: [190, 2.2, -0.41],
-                1: [56.3, 3.88, 0.16],
-                2: [56.3, 3.88, 0.045]
-                }
-) #Envelope THF configuration from TRAPPE
-
-
-def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorbates=[Nitrogen]):
+def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorbate_molecules=[sorbates.Nitrogen]):
     framework = read(input_file, store_tags=True)
     sim_title = str(input_file.stem)
     config_location = output_directory / 'CONFIG'
@@ -179,10 +132,10 @@ def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorb
         f.write(str(config))
 
     with open(field_location, 'w') as f:
-        f.write(str(dlm.make_field(dl_framework, sorbates, sim_title=f'{sim_title} + Nitrogen')))
+        f.write(str(dlm.make_field(dl_framework, sorbate_molecules,
+                                   sim_title=f'{sim_title} + {[x.name for x in sorbate_molecules]}')))
 
 
 if __name__ == "__main__":
-
     infile = 'Cu_BTC'
-    create_config_field(f'./{infile}',output_directory='./', sorbates=[THF_envelope])
+    create_config_field(f'./{infile}', output_directory='./', sorbate_molecules=[sorbates.THF_envelope])
