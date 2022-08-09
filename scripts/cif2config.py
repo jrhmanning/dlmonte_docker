@@ -3,9 +3,10 @@ from ase.io import read
 import dlmolecule as dlm
 import pathlib
 import sorbates
+import cif_hack
 
 # TODO: add argparsing funcionality
-# TODO: hack ASE so it imports charges
+# TODO: hack ASE so it imports charges. Done?
 
 MOF_LJ = {
     'Zn_S': [62.4, 2.46],
@@ -119,8 +120,17 @@ UFF_LJ = {
 }
 
 
-def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorbate_molecules=[sorbates.Nitrogen]):
-    framework = read(input_file, store_tags=True)
+def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorbate_molecules=[sorbates.Nitrogen],
+                        use_cif_hack = False):
+    if use_cif_hack:
+        try:
+            placeholder = cif_hack.parse_cif_ase('Cu_BTC.cif')
+            framework = next(placeholder).get_atoms()
+        except:
+            raise
+            # framework = read(input_file, store_tags=True)
+    else:
+        framework = read(input_file, store_tags=True)
     sim_title = str(input_file.stem)
     config_location = output_directory / 'CONFIG'
     field_location = output_directory / 'FIELD'

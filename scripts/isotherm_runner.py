@@ -67,7 +67,6 @@ parser.add_argument('-f','--Framework',
                     help='Name of the framework used (and associated .cif file).')
 
 parser.add_argument('-c', '--Composition',
-                    type=str,
                     action='store',
                     type=json.loads,
                     required=False,
@@ -82,7 +81,6 @@ parser.add_argument('-t','--Temperature',
                     default=298.0,
                     help='Specified temperature (in K).')
 parser.add_argument('-p','--Pressures',
-                    type=str,
                     action='store',
                     required=False,
                     metavar='Framework',
@@ -112,7 +110,7 @@ with open(control_location, 'w') as f:
 #TODO: add different sorbate functionality
 #TODO: add different sorbate functionality
 config_field_location = pathlib.Path('/run/')
-c2c.create_config_field(input_file=input_file, output_directory=config_field_location)
+c2c.create_config_field(input_file=input_file, output_directory=config_field_location, use_cif_hack=True)
 
 # DEBUG: print out the locations of the input files
 
