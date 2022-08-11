@@ -59,33 +59,34 @@ parser.add_argument('-o','--OutputFolder',
                     default='.',
                     help='Intended location for output files.')
 
-parser.add_argument('-f','--Framework',
+parser.add_argument('-f','--FrameworkName',
                     type=str,
                     action='store',
                     required=True,
-                    metavar='Framework',
+                    metavar='FRAMEWORK_NAME',
                     help='Name of the framework used (and associated .cif file).')
 
-parser.add_argument('-c', '--Composition',
+parser.add_argument('-c', '--GasComposition',
                     action='store',
                     type=json.loads,
                     required=False,
-                    metavar='OUTPUT_FOLDER',
-                    default = '{\\\"Nitrogen\\\": 1.0})',
+                    default={'CO2': 1.0},
+                    metavar='GAS_COMPOSITION',
                     help='Gas composition, as a string json object (e.g. {\\\"CO2\\\": 1.0}).')
+
 parser.add_argument('-t','--Temperature',
                     type=float,
                     action='store',
                     required=False,
-                    metavar='Framework',
+                    metavar='TEMPERATURE',
                     default=298.0,
                     help='Specified temperature (in K).')
 parser.add_argument('-p','--Pressures',
                     action='store',
                     required=False,
-                    metavar='Framework',
-                    type = pressure_preprocess,
-                    default="1e-15,1e-14,1e-13,1e-12,1e-11,1e-10,1e-9,1e-8,1e-7,1e-6,1e-5,1e-4,1e-3,1e-2",
+                    metavar='PRESSURES',
+                    type=pressure_preprocess,
+                    default='1e-15,1e-14,1e-13,1e-12,1e-11,1e-10,1e-9,1e-8,1e-7,1e-6,1e-5,1e-4,1e-3,1e-2',
                     help='Specified pressures in Pa as comma-separates string (e.g. \"1,2\").')
 args = parser.parse_args()
 
