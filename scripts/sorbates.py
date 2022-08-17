@@ -266,3 +266,20 @@ CH2Cl2 = dlm.DLMolecule(
         1: [123.34, 3.42, -0.2022]}
 )  # intermolecular interactions after 10.1021/ct500853q, positions by Mat Tolladay
 
+cyclohexane = dlm.DLMolecule(
+    name='cyclohexane',
+    molecules = Atoms(
+        'CCCCCC',
+        positions=[
+            (0.0, 0.0, 0.0),
+            (1.212, 0.7, 0.0),
+            (-1.212, 0.7, 0.0),
+            (1.212, 2.1, 0.0),
+            (-1.212, 2.1, 0.0),
+            (0.0, 2.8, 0.0)
+        ],
+        tags=[0,0,0,0,0,0]
+    ),
+    tags={0:'C'},
+    potentials = {0: [52.5, 3.91, 0]}
+)

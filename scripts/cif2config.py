@@ -148,4 +148,5 @@ def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorb
 
 if __name__ == "__main__":
     infile = 'Cu_BTC'
-    create_config_field(f'./{infile}', output_directory='./', sorbate_molecules=[sorbates.THF_envelope])
+    create_config_field(f'./{infile}', output_directory='./', sorbate_molecules=[sorbates.THF_envelope],
+                        use_cif_hack=True)

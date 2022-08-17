@@ -178,6 +178,26 @@ class DLMolecule:
             output.add_atom(i)
         return output
 
+    @staticmethod
+    def from_json(json_object):
+        import json
+        from ase import Atoms
+        placeholder = json.loads(json_object)
+        thing = DLMolecule(name=placeholder['name'],
+                           molecule=Atoms().fromdict(placeholder['molecule']),
+                           tags=placeholder['tags'],
+                           potentials=placeholder['potentials'])
+        return thing
+
+    def to_json(self):
+        import json
+        from ase import Atoms
+        output = {}
+        output['name'] = self.name
+        output['tags'] = self.tags
+        output['potentuaks'] = self.potentials
+        output['molecule'] = self.molecule.todict()
+        return output
 
 def get_vdw_interactions(interacting_molecules=[], self_excluding_molecules=[]):
     '''
