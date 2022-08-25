@@ -5,6 +5,25 @@ from dlmontepython.htk.sources import dlcontrol, dlmove
 from collections import OrderedDict
 from random import randint
 
+def define_molecule_movers(molname: str) -> list:
+    insert = dlmove.InsertMoleculeMove(
+        pfreq=50,  # proportional frequency of move type
+        rmin=0.7,  # auto-reject distance for insert attempts, in angstrom
+        movers=[{'id': molname, # Molecule name, cross-references against FIELD and CONFIG files
+                 'molpot': 5e-7}]
+    )
+    move = dlmove.MoleculeMove(
+        pfreq=25,
+        movers=[{'id': molname}]
+    )
+    rot = dlmove.RotateMoleculeMove(
+        pfreq=25,
+        movers=[{'id': molname}]
+    )
+    output = [insert, move, rot]
+    return output
+
+
 # A worked example of a control file (as a python object)
 AdsorptionExample = dlcontrol.CONTROL(
     title='Adsorption worked example',
@@ -50,34 +69,7 @@ AdsorptionExample = dlcontrol.CONTROL(
             }
         ),
         # MC move definition
-        moves=[
-            dlmove.InsertMoleculeMove(
-                pfreq=50,  # proportional frequency of move type
-                rmin=0.7,  # auto-reject distance for insert attemts, in angstrom
-                movers=[
-                    {
-                        'id': 'Nitrogen',  # Molecule name, cross-references against FIELD and CONFIG files
-                        'molpot': 5e-7  # chemical potential as defined in the use block
-                    }
-                ]
-            ),
-            dlmove.MoleculeMove(
-                pfreq=25,
-                movers=[
-                    {
-                        'id': 'Nitrogen'
-                    }
-                ]
-            ),
-            dlmove.RotateMoleculeMove(
-                pfreq=25,
-                movers=[
-                    {
-                        'id': 'Nitrogen'
-                    }
-                ]
-            )
-        ],
+        moves= define_molecule_movers('Nitrogen'),
 
         # Writing information to other files
         samples=OrderedDict(
@@ -93,10 +85,11 @@ AdsorptionExample = dlcontrol.CONTROL(
 
 )
 
+
+
+
 if __name__ == '__main__':
     AdsorptionExample.use_block.use_statements.pop('ortho')
     AdsorptionExample.main_block.statements['noewald'] = 'all'
     with open('./input_files/CONTROL', 'w') as f:
         f.write(str(AdsorptionExample))
-
-

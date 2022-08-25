@@ -1,4 +1,5 @@
 import dlmolecule as dlm
+from ase import Atoms
 
 Nitrogen = dlm.DLMolecule(
     name='Nitrogen',
@@ -268,7 +269,7 @@ CH2Cl2 = dlm.DLMolecule(
 
 cyclohexane = dlm.DLMolecule(
     name='cyclohexane',
-    molecules = Atoms(
+    molecule=Atoms(
         'CCCCCC',
         positions=[
             (0.0, 0.0, 0.0),
@@ -278,8 +279,39 @@ cyclohexane = dlm.DLMolecule(
             (-1.212, 2.1, 0.0),
             (0.0, 2.8, 0.0)
         ],
-        tags=[0,0,0,0,0,0]
+        tags=[0, 0, 0, 0, 0, 0]
     ),
-    tags={0:'C'},
-    potentials = {0: [52.5, 3.91, 0]}
+    tags={0: 'C'},
+    potentials={0: [52.5, 3.91, 0]}
 )
+
+CO2 = dlm.DLMolecule(
+    name='CO2',
+    molecule=Atoms(
+        'OCO',
+        positions=[
+            (-1.16, 0, 0),
+            (0, 0, 0),
+            (1.16, 0, 0)
+        ],
+        tags=[0, 1, 0]
+    ),
+    tags={0: 'O', 1: 'C'},
+    potentials={0: [79, 2.8, -0.35],
+                1: [27, 3.05, 0.7]}
+)
+
+lookup = {
+    'Nitrogen': Nitrogen,
+    'CO2': CO2,
+    'THF': THF_twisted,
+    'MeOH': MeOH,
+    'EtOH': EtOH,
+    'Acetone': Ace,
+    'Acetonitrile': ACN,
+    'Chloroform': Chloroform_3,
+    'CCl4': CCl4,
+    'Dichloromethane': CH2Cl2,
+    'Cyclohexane': cyclohexane
+
+}

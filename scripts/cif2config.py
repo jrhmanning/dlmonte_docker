@@ -124,7 +124,7 @@ def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorb
                         use_cif_hack = False):
     if use_cif_hack:
         try:
-            placeholder = cif_hack.parse_cif_ase('Cu_BTC.cif')
+            placeholder = cif_hack.parse_cif_ase(str(input_file))
             framework = next(placeholder).get_atoms()
         except:
             raise

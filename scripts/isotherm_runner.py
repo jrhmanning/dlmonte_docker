@@ -6,6 +6,7 @@
 # The whole script should take ca. 45 minutes to complete.
 
 import logging
+import os
 import dlmontepython.simtask.dlmonteinterface as interface
 import dlmontepython.simtask.measurement as measurement
 import dlmontepython.simtask.task as task
@@ -15,18 +16,19 @@ from glob import glob
 import argparse
 import pathlib
 import json
+import sorbates
 
-def Pa_to_katm(pressure):
+def Pa_to_katm(pressure: float) -> float:
     try:
         float(pressure)
     except TypeError:
         raise TypeError('Impossible to parse pressure values as floats!')
-    return presure*9.86923e-9
+    return pressure*9.86923e-9
 
-def str_to_floats(input_string):
-    return [float(x) for x in input_string.split()]
+def str_to_floats(input_string: str) -> list:
+    return [float(x) for x in input_string.split(',')]
 
-def pressure_preprocess(input_string):
+def pressure_preprocess(input_string: str) -> list:
     return [Pa_to_katm(x) for x in str_to_floats(input_string)]
 
 # Set up the logger, which determines the nature of information output by the machinery in the 'task' package.
@@ -37,7 +39,7 @@ handler = logging.StreamHandler()
 # Replacing 'logging.INFO' with 'logging.DEBUGGING' below results in more information being output by the
 # logger. Using 'logging.WARNING' results in less information being output: only 'warnings'
 
-measurement.logger.setLevel(logging.DEBUG)
+measurement.logger.setLevel(logging.INFO)
 measurement.logger.addHandler(handler)
 
 # Define external arguments for file input/output locations
@@ -72,7 +74,7 @@ parser.add_argument('-c', '--GasComposition',
                     required=False,
                     default={'CO2': 1.0},
                     metavar='GAS_COMPOSITION',
-                    help='Gas composition, as a string json object (e.g. {\\\"CO2\\\": 1.0}).')
+                    help="Gas composition, as a string json object (e.g. {'CO2': 1.0}).")
 
 parser.add_argument('-t','--Temperature',
                     type=float,
@@ -81,21 +83,50 @@ parser.add_argument('-t','--Temperature',
                     metavar='TEMPERATURE',
                     default=298.0,
                     help='Specified temperature (in K).')
+
 parser.add_argument('-p','--Pressures',
                     action='store',
                     required=False,
                     metavar='PRESSURES',
                     type=pressure_preprocess,
-                    default='1e-15,1e-14,1e-13,1e-12,1e-11,1e-10,1e-9,1e-8,1e-7,1e-6,1e-5,1e-4,1e-3,1e-2',
+                    default='1e-2,1e-1,1e0,1e1,1e2,1e3,1e4,1e5,1e6',
                     help='Specified pressures in Pa as comma-separates string (e.g. \"1,2\").')
+
+parser.add_argument('-q', '--Charges',
+                    action='store',
+                    required=False,
+                    metavar='CHARGES',
+                    type=bool,
+                    default=True,
+                    help='Ewald summation charges - set to False to turn off charges')
 args = parser.parse_args()
 
+logging.debug(args)
+
 # Now let's set up the paths to the input and output directories, and check they exist
-input_file = pathlib.Path(args.InputFolder,  args.Framework).with_suffix('.cif')
-assert input_file.exists(), 'Cannot find input file from specified location: {}'.format(input_file)
+input_file = pathlib.Path(args.InputFolder,  args.FrameworkName).with_suffix('.cif')
+assert input_file.exists(), '''Cannot find input file from specified location: {0}
+current directory: {1}
+{2}
+input directory: {3}
+{4}'''.format(input_file, os.getcwd(), os.listdir(), args.InputFolder, os.listdir(args.InputFolder))
 
 output_folder = pathlib.Path(args.OutputFolder)
 output_folder.mkdir(parents=True, exist_ok=True) # Makes the directory, if it didn't already exist
+
+logging.info(f"""-------------------
+Beginning Automated isotherm simulation
+-------------------
+Meta-variables:
+-------------------
+Input folder: {args.InputFolder}
+Output folder: {args.OutputFolder}
+Simulation framework: {args.FrameworkName}
+Simulation temperature: {args.Temperature}
+Simulation composition: {args.GasComposition} (N.B. gas pressures will only change for the first species)
+Simulation pressures (in Pa): {args.Pressures}
+-------------------
+""")
 
 
 # Set up the CONTROL input file from the example in isotherm.py.
@@ -103,15 +134,22 @@ control_location = pathlib.Path('/run/CONTROL')
 
 control_obj = isotherm.AdsorptionExample
 control_obj.use_block.use_statements.pop('ortho')
-control_obj.main_block.statements['noewald'] = 'all'
+if not args.Charges:
+    control_obj.main_block.statements['noewald'] = 'all'
+
+control_obj.main_block.statements['temperature'] = args.Temperature
+
+control_obj.main_block.moves = isotherm.define_molecule_movers(list(args.GasComposition.keys())[0])
 with open(control_location, 'w') as f:
     f.write(str(control_obj))
 
 # Set up the FIELD and CONFIG files from the generator in cif2config.
-#TODO: add different sorbate functionality
-#TODO: add different sorbate functionality
+#TODO: add multiple sorbate functionality
 config_field_location = pathlib.Path('/run/')
-c2c.create_config_field(input_file=input_file, output_directory=config_field_location, use_cif_hack=True)
+c2c.create_config_field(input_file=input_file,
+                        output_directory=config_field_location,
+                        use_cif_hack=True,
+                        sorbate_molecules=[sorbates.lookup[list(args.GasComposition.keys())[0]]])
 
 # DEBUG: print out the locations of the input files
 
@@ -159,7 +197,7 @@ measurement_template = measurement.Measurement(interface, observables, precision
 
 # Set up the list of temperatures to consider
 
-molchempots = [1e-15, 1e-14, 1e-13, 1e-12, 1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2]
+molchempots = args.Pressures
 
 # Set up a MeasurementSweep object which - which will actually perform the simulations and data analysis.
 # Note that all the simulations and output files pertaining to analysis will be created in the directory
