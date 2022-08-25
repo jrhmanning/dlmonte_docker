@@ -19,17 +19,49 @@ In order to run this container you'll need docker installed.
 
 ### Usage
 
-#### Container Parameters
-
-Currently the container will prepare a test simulation in the `/run/` directory which will run a test isotherm of Nitrogen in CuBTC (HKUST-1), outputting a graph and data file to the /interface/ directory for file I/O. This takes a little while to run (ca. 1 hour).
+The container has several pre-formatted template simulation files and runscripts contained within `/scripts/`, which can be run directly when calling a script with the container:
 
 ```shell
-docker run -v $PWD/interface/:/run/interface/ dlmonte_test python isotherm_runner.py --InputFolder=/run/interface --OutputFolder=/run/interface --Framework=Cu_BTC
+docker run -v $PWD/interface/:/run/interface/ jrhmanning/dl_monte:latest python isotherm_runner.py --InputFolder=/run/interface --OutputFolder=/run/interface --Framework=Cu_BTC
 ```
+
+#### Simulation templates
+Currently, the repository contains a single template control object:
+
+- `AdsorptionExample`, within the `isotherm_control_generator.py` file. 
+  - This describes a simple GCMC isotherm with no advanced sampling, which can be modified to suit most standard adsorption simulation workflows. 
+
+#### Simulation scripts
+The repository contains the following simulation run scripts, which uses `dlmontepython.simtask` to automate GCMC tasks:
+
+- `isotherm_runner.py`
+  - Runs an isotherm on a fixed-atom framework found in a `.cif` file. Runs through different pressure values to perform GCMC, and return a `.csv` and `.png` file summarising the results.
+
+#### Simulation Parameters
+
+Simulation parameters can be controlled using argument parsing inside the various python scripts to control or amend parameters. These should be uniform across all simulation scripts included.
+
+* `InputFolder`
+  * The input directory containing your input `.cif` file
+* `OutputFolder`
+  * The output directory whee your simulation outputs will be located. 
+* `FrameworkName`
+  * The name of your `.cif` file (without the file type, e.g. `Cu_BTC`, not `Cu_BTC.cif`)
+* `GasComposition`
+  * The name and relative frequency of each proble molecule (N.B. only single gas molecules is currently supported)
+* `Temperature`
+  * The single temperature of your isotherm (in K)
+* `Pressures`
+  * The pressure values if your isotherm, as a comma-separated string (e.g. `'1,2,5,1000'`)
+* `Charges`
+  * A boolean to turn off the Ewald summation, if you want to run a much faster simulation
+
 
 ## Built With
 
 * DL_MONTE 2.07
+* dlmontepython
+* [ase](https://wiki.fysik.dtu.dk/ase/)
 
 
 ## Find Us
