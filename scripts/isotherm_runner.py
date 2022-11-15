@@ -31,6 +31,9 @@ def str_to_floats(input_string: str) -> list:
 def pressure_preprocess(input_string: str) -> list:
     return [Pa_to_katm(x) for x in str_to_floats(input_string)]
 
+def composition_preprocess(input_string:str) -> dict:
+    return json.loads(eval(input_string))
+
 # Set up the logger, which determines the nature of information output by the machinery in the 'task' package.
 # The code below results in logging information being output to stdout
 
@@ -70,11 +73,11 @@ parser.add_argument('-f','--FrameworkName',
 
 parser.add_argument('-c', '--GasComposition',
                     action='store',
-                    type=json.loads,
+                    type=eval,
                     required=False,
-                    default={'CO2': 1.0},
+                    default='{"CO2": 1.0}',
                     metavar='GAS_COMPOSITION',
-                    help="Gas composition, as a string json object (e.g. {'CO2': 1.0}).")
+                    help="Gas composition, as a string json object (e.g. '{\"CO2\": 1.0}').")
 
 parser.add_argument('-t','--Temperature',
                     type=float,

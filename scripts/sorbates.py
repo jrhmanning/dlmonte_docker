@@ -283,7 +283,7 @@ cyclohexane = dlm.DLMolecule(
     ),
     tags={0: 'C'},
     potentials={0: [52.5, 3.91, 0]}
-)
+) # TRAPPE
 
 CO2 = dlm.DLMolecule(
     name='CO2',

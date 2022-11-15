@@ -15,15 +15,6 @@ RUN python -m pip install --no-cache-dir --upgrade pip pipenv
 RUN pipenv install --skip-lock --system --verbose && \
     pipenv --clear
 
-# Install dlmontepython
-RUN wget -q https://gitlab.com/dl_monte/dlmontepython/-/archive/master/dlmontepython-master.zip && \
-    unzip dlmontepython-master.zip && \
-    cd dlmontepython-master && \
-      python setup.py install && \
-    cd .. && \
-    rm -fr dlmontepython-master.zip dlmontepython-master
-	
-	
 # Install DLMONTE
 RUN wget -q https://gitlab.com/dl_monte/DL_MONTE-2/-/archive/master/DL_MONTE-2-master.zip && \
     unzip DL_MONTE-2-master.zip && \
