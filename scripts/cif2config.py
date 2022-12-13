@@ -4,7 +4,6 @@ import dlmolecule as dlm
 import pathlib
 import sorbates
 import cif_hack
-from error import NotI
 
 # TODO: add argparsing funcionality
 # DONE: hack ASE so it imports charges
@@ -122,7 +121,7 @@ UFF_LJ = {
 
 
 def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorbate_molecules=[sorbates.Nitrogen],
-                        use_cif_hack = False):
+                        use_cif_hack = False, cutoff=12):
     if use_cif_hack:
         try:
             placeholder = cif_hack.parse_cif_ase(str(input_file))

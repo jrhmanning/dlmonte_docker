@@ -113,7 +113,7 @@ parser.add_argument('--Cutoff',
                     metavar='CUTOFF_LENGTH',
                     type=float,
                     default=21,
-                    help='simulation cutoff length - defaults to 12 Angstrom')
+                    help='simulation cutoff length - defaults to 12 Angstrom. Automatically creates supercells based on the minimum image convention for cif file inputs (but not empty boxes).')
 args = parser.parse_args()
 
 logging.debug(args)
@@ -210,7 +210,7 @@ def parse_input_file(input_name: str, simulation_run_directory: Union[str, pathl
             except: 
                 raise FileNotFoundError("Can't import both your CONFIG and FIELD file in the inpput folder - please check your input arguments and try again")
                 
-            raise NotImplementedError('Can;t handle a preformmated config file without a preformatted FIELD file')
+            raise NotImplementedError("Can't handle a preformmated config file without a preformatted FIELD file")
 
             return None
         else:
@@ -218,7 +218,8 @@ def parse_input_file(input_name: str, simulation_run_directory: Union[str, pathl
                 input_file=pathlib.path(args.InputFolder) / input_name,
                 output_directory=simulation_run_directory,
                 use_cif_hack=True,
-                sorbate_molecules=[sorbates.lookup[list(args.GasComposition.keys())[0]]]
+                sorbate_molecules=[sorbates.lookup[list(args.GasComposition.keys())[0]]],
+                cutoff=args.Cutoff
             )
         return None
     except:
