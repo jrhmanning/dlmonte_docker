@@ -3,6 +3,8 @@
 Defines a general molecule class with enough information to produce a CONFIG and FIELD file.
 Contains methods to instantiate DLMolecule objects from ASE Atoms objects,
 
+13-12-22 - I've added functionality for make_field to not take a framework_molecule. Hopefully this won't break anything
+
 """
 
 from dlmontepython.htk.sources.dlconfig import CONFIG
@@ -291,9 +293,10 @@ def make_field(framework_molecule, sorbate_molecules=[], cutoff=12, sim_title='T
     output.units = 'K'
 
     # Framework atomtypes and moltype
-    for atomtype in framework_molecule.get_field_atomtypes():
-        output.atomtypes.append(atomtype)
-    output.moltypes.append(framework_molecule.get_maxatom_moltype())
+    if framework_molecule:
+        for atomtype in framework_molecule.get_field_atomtypes():
+            output.atomtypes.append(atomtype)
+        output.moltypes.append(framework_molecule.get_maxatom_moltype())
 
     # Sorbate atomtypes and moltypes
     for sorbate in sorbate_molecules:

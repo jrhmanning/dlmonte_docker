@@ -10,6 +10,7 @@ import os
 import dlmontepython.simtask.dlmonteinterface as interface
 import dlmontepython.simtask.measurement as measurement
 import dlmontepython.simtask.task as task
+import dlmontepython.htk.sources.dlconfig as config
 import isotherm_control_generator as isotherm
 import cif2config as c2c
 from glob import glob
@@ -17,6 +18,7 @@ import argparse
 import pathlib
 import json
 import sorbates
+from typing import Union
 
 def Pa_to_katm(pressure: float) -> float:
     try:
@@ -34,6 +36,21 @@ def pressure_preprocess(input_string: str) -> list:
 def composition_preprocess(input_string:str) -> dict:
     return json.loads(eval(input_string))
 
+def parse_input_file(input_name: str) -> Union[str,config.CONFIG]:
+    # flexibly parses input file information to handle empty cells
+    try:
+        boxsize = float(input_name)
+        config.CONFIG(
+            title="Empty cubic cell",
+            level=1,
+            dlformat=0,
+            vcell=[boxsize,boxsize,boxsize],
+            nummol=0,
+            molecules=0
+        )
+        return None
+    except:
+        return None
 # Set up the logger, which determines the nature of information output by the machinery in the 'task' package.
 # The code below results in logging information being output to stdout
 

@@ -4,9 +4,10 @@ import dlmolecule as dlm
 import pathlib
 import sorbates
 import cif_hack
+from error import NotI
 
 # TODO: add argparsing funcionality
-# TODO: hack ASE so it imports charges. Done?
+# DONE: hack ASE so it imports charges
 
 MOF_LJ = {
     'Zn_S': [62.4, 2.46],
