@@ -11,6 +11,8 @@ import dlmontepython.simtask.dlmonteinterface as interface
 import dlmontepython.simtask.measurement as measurement
 import dlmontepython.simtask.task as task
 import dlmontepython.htk.sources.dlconfig as config
+import dlmontepython.htk.sources.dlfield as field
+import dlmolecule as dlm
 import isotherm_control_generator as isotherm
 import cif2config as c2c
 from glob import glob
@@ -36,21 +38,6 @@ def pressure_preprocess(input_string: str) -> list:
 def composition_preprocess(input_string:str) -> dict:
     return json.loads(eval(input_string))
 
-def parse_input_file(input_name: str) -> Union[str,config.CONFIG]:
-    # flexibly parses input file information to handle empty cells
-    try:
-        boxsize = float(input_name)
-        config.CONFIG(
-            title="Empty cubic cell",
-            level=1,
-            dlformat=0,
-            vcell=[boxsize,boxsize,boxsize],
-            nummol=0,
-            molecules=0
-        )
-        return None
-    except:
-        return None
 # Set up the logger, which determines the nature of information output by the machinery in the 'task' package.
 # The code below results in logging information being output to stdout
 
@@ -86,7 +73,7 @@ parser.add_argument('-f','--FrameworkName',
                     action='store',
                     required=True,
                     metavar='FRAMEWORK_NAME',
-                    help='Name of the framework used (and associated .cif file).')
+                    help='Name of the framework used (and associated .cif file). Can also handle float values (for an empty cube of that side length), or "CONFIG" (for predefined CONFIG and FIELD files in hte input folder).')
 
 parser.add_argument('-c', '--GasComposition',
                     action='store',
@@ -119,6 +106,14 @@ parser.add_argument('-q', '--Charges',
                     type=bool,
                     default=True,
                     help='Ewald summation charges - set to False to turn off charges')
+
+parser.add_argument('--Cutoff',
+                    action='store',
+                    required=False,
+                    metavar='CUTOFF_LENGTH',
+                    type=float,
+                    default=21,
+                    help='simulation cutoff length - defaults to 12 Angstrom')
 args = parser.parse_args()
 
 logging.debug(args)
@@ -163,21 +158,81 @@ control_obj.main_block.moves = isotherm.define_molecule_movers(list(args.GasComp
 with open(control_location, 'w') as f:
     f.write(str(control_obj))
 
+print(f'Control file at {control_location} exists? {control_location.exists()}')
+
 # Set up the FIELD and CONFIG files from the generator in cif2config.
 #TODO: add multiple sorbate functionality
 config_field_location = pathlib.Path('/run/')
-c2c.create_config_field(input_file=input_file,
-                        output_directory=config_field_location,
-                        use_cif_hack=True,
-                        sorbate_molecules=[sorbates.lookup[list(args.GasComposition.keys())[0]]])
 
+def parse_input_file(input_name: str, simulation_run_directory: Union[str, pathlib.Path] = '/run/') -> Union[str,config.CONFIG]:
+    # flexibly parses input file information to handle empty cells
+
+    ##Empty box
+    try:
+        boxsize = float(input_name)
+        empty_box = config.CONFIG(
+            title="Empty cubic cell",
+            level=1,
+            dlformat=0,
+            vcell=[boxsize,boxsize,boxsize],
+            nummol=1000,
+            molecules=0
+        )
+
+        with open(pathlib.Path(simulation_run_directory) / 'CONFIG') as f:
+            f.write(str(empty_box))
+        
+        field_file = dlm.make_field(
+            framework_molecule=None, 
+            sorbate_molecules=[sorbates.lookup[list(args.GasComposition.keys())[0]]],
+            cutoff=args.Cutoff,
+            sim_title= 'Bulk simulation'   
+        )
+
+        with open(pathlib.Path(simulation_run_directory) / 'FIELD') as f:
+            f.write(str(field_file))
+
+        return None
+
+    except TypeError:
+
+        ## preformatted CONFIG and FIELD
+        if input_file == "CONFIG":
+            try:
+                config_file = config.CONFIG.from_file(pathlib.path(args.InputFolder) / 'CONFIG')
+                field_file = field.from_file(pathlib.path(args.InputFolder) / 'FIELD')
+
+                with open(pathlib.Path(simulation_run_directory) / 'CONFIG') as f:
+                    f.write(str(config_file))
+
+                with open(pathlib.Path(simulation_run_directory) / 'FIELD') as f:
+                    f.write(str(field_file))
+            except: 
+                raise FileNotFoundError("Can't import both your CONFIG and FIELD file in the inpput folder - please check your input arguments and try again")
+                
+            raise NotImplementedError('Can;t handle a preformmated config file without a preformatted FIELD file')
+
+            return None
+        else:
+            c2c.create_config_field(
+                input_file=pathlib.path(args.InputFolder) / input_name,
+                output_directory=simulation_run_directory,
+                use_cif_hack=True,
+                sorbate_molecules=[sorbates.lookup[list(args.GasComposition.keys())[0]]]
+            )
+        return None
+    except:
+        raise TypeError(f"Can't interpret the file name {input_name} as a float, CONFIG, or cif file. Please check your spelling and try again")
+
+parse_input_file(input_name=args.FrameworkName, simulation_run_directory = config_field_location)
 # DEBUG: print out the locations of the input files
 
-print(f'Control file at {control_location} exists? {control_location.exists()}')
 config_location = config_field_location / 'CONFIG'
 print(f'Config file at {config_location} exists? {config_location.exists()}')
 field_location = config_field_location / 'FIELD'
 print(f'Field file at {field_location} exists? {field_location.exists()}')
+
+
 
 # Set up the relevant TaskInterface object: which tells the low-level machinery in the 'task' package
 # which code will be used to perform the simulations, and how to perform various tasks specific to that
