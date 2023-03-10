@@ -56,6 +56,13 @@ Simulation parameters can be controlled using argument parsing inside the variou
 * `Charges`
   * A boolean to turn off the Ewald summation, if you want to run a much faster simulation
 
+## Roadmap
+
+* Integration with IBM's ST4SD framework and definition of a flowIR package
+* Incorporation of Lennard-Jones potentials for educational systems
+* Incorporation of template control files from tutorials and test cases from DL_MONTE repository
+* Changing free_energy_sweep.py to use Converge objects instead of Measurement
+
 
 ## Built With
 
