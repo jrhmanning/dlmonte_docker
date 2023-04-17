@@ -102,7 +102,7 @@ TMMCExample = dlcontrol.CONTROL(
 
 
 if __name__ == '__main__':
-    AdsorptionExample.use_block.use_statements.pop('ortho')
-    AdsorptionExample.main_block.statements['noewald'] = 'all'
-    with open('./input_files/CONTROL', 'w') as f:
-        f.write(str(AdsorptionExample))
+    TMMCExample.use_block.use_statements.pop('ortho')
+    TMMCExample.main_block.statements['noewald'] = 'all'
+    with open('./CONTROL', 'w') as f:
+        f.write(str(TMMCExample))

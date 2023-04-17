@@ -19,7 +19,7 @@ RUN pipenv install --skip-lock --system --verbose && \
 RUN wget -q https://gitlab.com/dl_monte/dlmontepython/-/archive/master/dlmontepython-master.zip && \
     unzip dlmontepython-master.zip && \
     cd dlmontepython-master && \
-      python setup.py install && \
+    python setup.py install && \
     cd .. && \
     rm -fr dlmontepython-master.zip dlmontepython-master
 	

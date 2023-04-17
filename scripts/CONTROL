@@ -1,0 +1,28 @@
+Transition matrix Monte Carlo worked example
+use gaspressure
+use fed generic
+fed method tm tri 1000000 1000 new
+fed order param nmols 201 -0.5 200.5
+fed done
+finish use-block
+seeds 81 96 82 33
+archiveformat dlmonte
+equilibration 0
+steps 1000000
+check 1000
+stack 1000
+yamldata 1000
+print 10000
+temperature 77.0
+ewald precision 1e-06
+acceptatmmoveupdate 200
+acceptmolrotupdate 200
+noewald all
+sample coords 1000000
+move gcinsertmol 1 50 0.7
+Nitrogen 5e-07
+move molecule 1 25
+Nitrogen
+move rotatemol 1 25
+Nitrogen
+start simulation

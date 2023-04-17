@@ -104,6 +104,7 @@ parser.add_argument('-q', '--Charges',
                     type=bool,
                     default=True,
                     help='Ewald summation charges - set to False to turn off charges')
+
 parser.add_argument('-nmin',
                     action='store',
                     required=False,
@@ -111,6 +112,7 @@ parser.add_argument('-nmin',
                     type=int,
                     default=0,
                     help='Minimum number of sorbates to simulate in free energy simulations. Defaults to 0')
+
 parser.add_argument('-nmax',
                     action='store',
                     required=False,

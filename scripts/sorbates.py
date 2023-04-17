@@ -1,6 +1,20 @@
 import dlmolecule as dlm
 from ase import Atoms
 
+LJ = dlm.DLMolecule(
+    name = LJ,
+    molecule = Atoms(
+    'He',
+    positions=[(0,0,0)],
+    tags = [0],
+    charges = [0]
+    ),
+    tags = {0: 'He'}, #helium for ease of reading back in with ASE later on
+    potentials = {
+    0: [1,1,0]
+    }
+)
+
 Nitrogen = dlm.DLMolecule(
     name='Nitrogen',
     molecule=Atoms(
@@ -302,6 +316,7 @@ CO2 = dlm.DLMolecule(
 )
 
 lookup = {
+    'LJ': LJ,
     'Nitrogen': Nitrogen,
     'CO2': CO2,
     'THF': THF_twisted,
@@ -312,6 +327,7 @@ lookup = {
     'Chloroform': Chloroform_3,
     'CCl4': CCl4,
     'Dichloromethane': CH2Cl2,
-    'Cyclohexane': cyclohexane
+    'Cyclohexane': cyclohexane,
+    
 
 }
