@@ -122,6 +122,29 @@ UFF_LJ = {
 
 def create_config_field(input_file, output_directory=pathlib.Path('/run/'), sorbate_molecules=[sorbates.Nitrogen],
                         use_cif_hack = False, cutoff=12):
+    '''This function creates a configuration field for a given input file and outputs it to a specified
+    directory.
+    
+    Parameters
+    ----------
+    input_file
+        The input file containing the framework structure, in a format that can be read by the `read`
+    function (e.g. .cif, .pdb, .xyz).
+    output_directory
+        The directory where the output files will be saved.
+    sorbate_molecules
+        A list of sorbate molecules to be included in the simulation.
+    use_cif_hack, optional
+        A boolean flag indicating whether to use a CIF hack to read the input file. If set to True, the
+    code will attempt to parse the input file using the CIF format and convert it to an ASE atoms
+    object. If set to False, the code will directly read the input file using the format specified
+    cutoff, optional
+        The cutoff parameter is used to define the distance beyond which interactions between atoms are
+    considered negligible and are not included in the simulation.
+    
+    '''
+    
+
     if use_cif_hack:
         try:
             placeholder = cif_hack.parse_cif_ase(str(input_file))

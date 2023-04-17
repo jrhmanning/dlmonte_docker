@@ -2,7 +2,7 @@ import dlmolecule as dlm
 from ase import Atoms
 
 LJ = dlm.DLMolecule(
-    name = LJ,
+    name = 'LJ',
     molecule = Atoms(
     'He',
     positions=[(0,0,0)],

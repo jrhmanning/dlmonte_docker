@@ -10,16 +10,11 @@ import os
 import dlmontepython.simtask.dlmonteinterface as interface
 import dlmontepython.simtask.measurement as measurement
 import dlmontepython.simtask.task as task
-import dlmontepython.htk.sources.dlconfig as config
-import dlmontepython.htk.sources.dlfield as field
-import dlmolecule as dlm
-import isotherm_control_generator as isotherm
-import cif2config as c2c
+import tarfile
 from glob import glob
 import argparse
 import pathlib
-import json
-import sorbates
+
 from typing import Union
 
 def Pa_to_katm(pressure: float) -> float:
@@ -34,9 +29,6 @@ def str_to_floats(input_string: str) -> list:
 
 def pressure_preprocess(input_string: str) -> list:
     return [Pa_to_katm(x) for x in str_to_floats(input_string)]
-
-def composition_preprocess(input_string:str) -> dict:
-    return json.loads(eval(input_string))
 
 # Set up the logger, which determines the nature of information output by the machinery in the 'task' package.
 # The code below results in logging information being output to stdout
@@ -68,29 +60,6 @@ parser.add_argument('-o','--OutputFolder',
                     default='.',
                     help='Intended location for output files.')
 
-parser.add_argument('-f','--FrameworkName',
-                    type=str,
-                    action='store',
-                    required=True,
-                    metavar='FRAMEWORK_NAME',
-                    help='Name of the framework used (and associated .cif file). Can also handle float values (for an empty cube of that side length), or "CONFIG" (for predefined CONFIG and FIELD files in hte input folder).')
-
-parser.add_argument('-c', '--GasComposition',
-                    action='store',
-                    type=eval,
-                    required=False,
-                    default='{"CO2": 1.0}',
-                    metavar='GAS_COMPOSITION',
-                    help="Gas composition, as a string json object (e.g. '{\"CO2\": 1.0}').")
-
-parser.add_argument('-t','--Temperature',
-                    type=float,
-                    action='store',
-                    required=False,
-                    metavar='TEMPERATURE',
-                    default=298.0,
-                    help='Specified temperature (in K).')
-
 parser.add_argument('-p','--Pressures',
                     action='store',
                     required=False,
@@ -99,32 +68,9 @@ parser.add_argument('-p','--Pressures',
                     default='1e-2,1e-1,1e0,1e1,1e2,1e3,1e4,1e5,1e6',
                     help='Specified pressures in Pa as comma-separates string (e.g. \"1,2\").')
 
-parser.add_argument('-q', '--Charges',
-                    action='store',
-                    required=False,
-                    metavar='CHARGES',
-                    type=bool,
-                    default=True,
-                    help='Ewald summation charges - set to False to turn off charges')
-
-parser.add_argument('--Cutoff',
-                    action='store',
-                    required=False,
-                    metavar='CUTOFF_LENGTH',
-                    type=float,
-                    default=21,
-                    help='simulation cutoff length - defaults to 12 Angstrom. Automatically creates supercells based on the minimum image convention for cif file inputs (but not empty boxes).')
 args = parser.parse_args()
 
 logging.debug(args)
-
-# Now let's set up the paths to the input and output directories, and check they exist
-input_file = pathlib.Path(args.InputFolder,  args.FrameworkName).with_suffix('.cif')
-assert input_file.exists(), '''Cannot find input file from specified location: {0}
-current directory: {1}
-{2}
-input directory: {3}
-{4}'''.format(input_file, os.getcwd(), os.listdir(), args.InputFolder, os.listdir(args.InputFolder))
 
 output_folder = pathlib.Path(args.OutputFolder)
 output_folder.mkdir(parents=True, exist_ok=True) # Makes the directory, if it didn't already exist
@@ -136,103 +82,19 @@ Meta-variables:
 -------------------
 Input folder: {args.InputFolder}
 Output folder: {args.OutputFolder}
-Simulation framework: {args.FrameworkName}
-Simulation temperature: {args.Temperature}
-Simulation composition: {args.GasComposition} (N.B. gas pressures will only change for the first species)
 Simulation pressures (in Pa): {args.Pressures}
 -------------------
 """)
 
-
-# Set up the CONTROL input file from the example in isotherm.py.
-control_location = pathlib.Path('/run/CONTROL')
-
-control_obj = isotherm.AdsorptionExample
-control_obj.use_block.use_statements.pop('ortho')
-if not args.Charges:
-    control_obj.main_block.statements['noewald'] = 'all'
-
-control_obj.main_block.statements['temperature'] = args.Temperature
-
-control_obj.main_block.moves = isotherm.define_molecule_movers(list(args.GasComposition.keys())[0])
-with open(control_location, 'w') as f:
-    f.write(str(control_obj))
-
-print(f'Control file at {control_location} exists? {control_location.exists()}')
-
-# Set up the FIELD and CONFIG files from the generator in cif2config.
-#TODO: add multiple sorbate functionality
-config_field_location = pathlib.Path('/run/')
-
-def parse_input_file(input_name: str, simulation_run_directory: Union[str, pathlib.Path] = '/run/') -> Union[str,config.CONFIG]:
-    # flexibly parses input file information to handle empty cells
-
-    ##Empty box
+with tarfile.open(f'{args.InputFolder}/dlm_preprocess.tgz', 'r:gz') as tar:
     try:
-        boxsize = float(input_name)
-        empty_box = config.CONFIG(
-            title="Empty cubic cell",
-            level=1,
-            dlformat=0,
-            vcell=[boxsize,boxsize,boxsize],
-            nummol=1000,
-            molecules=0
-        )
-
-        with open(pathlib.Path(simulation_run_directory) / 'CONFIG') as f:
-            f.write(str(empty_box))
-        
-        field_file = dlm.make_field(
-            framework_molecule=None, 
-            sorbate_molecules=[sorbates.lookup[list(args.GasComposition.keys())[0]]],
-            cutoff=args.Cutoff,
-            sim_title= 'Bulk simulation'   
-        )
-
-        with open(pathlib.Path(simulation_run_directory) / 'FIELD') as f:
-            f.write(str(field_file))
-
-        return None
-
-    except TypeError:
-
-        ## preformatted CONFIG and FIELD
-        if input_file == "CONFIG":
-            try:
-                config_file = config.CONFIG.from_file(pathlib.path(args.InputFolder) / 'CONFIG')
-                field_file = field.from_file(pathlib.path(args.InputFolder) / 'FIELD')
-
-                with open(pathlib.Path(simulation_run_directory) / 'CONFIG') as f:
-                    f.write(str(config_file))
-
-                with open(pathlib.Path(simulation_run_directory) / 'FIELD') as f:
-                    f.write(str(field_file))
-            except: 
-                raise FileNotFoundError("Can't import both your CONFIG and FIELD file in the inpput folder - please check your input arguments and try again")
-                
-            raise NotImplementedError("Can't handle a preformmated config file without a preformatted FIELD file")
-
-            return None
-        else:
-            c2c.create_config_field(
-                input_file=pathlib.path(args.InputFolder) / input_name,
-                output_directory=simulation_run_directory,
-                use_cif_hack=True,
-                sorbate_molecules=[sorbates.lookup[list(args.GasComposition.keys())[0]]],
-                cutoff=args.Cutoff
-            )
-        return None
-    except:
-        raise TypeError(f"Can't interpret the file name {input_name} as a float, CONFIG, or cif file. Please check your spelling and try again")
-
-parse_input_file(input_name=args.FrameworkName, simulation_run_directory = config_field_location)
-# DEBUG: print out the locations of the input files
-
-config_location = config_field_location / 'CONFIG'
-print(f'Config file at {config_location} exists? {config_location.exists()}')
-field_location = config_field_location / 'FIELD'
-print(f'Field file at {field_location} exists? {field_location.exists()}')
-
+        tar.extract('CONTROL', path = args.InputFolder)
+        tar.extract('CONFIG', path = args.InputFolder)
+        tar.extract('FIELD', path = args.InputFolder)
+    except KeyError:
+        print(tar.getmembers())
+        import sys
+        sys.exit()
 
 
 # Set up the relevant TaskInterface object: which tells the low-level machinery in the 'task' package
@@ -269,7 +131,7 @@ precisions = { nmol_obs : 2 }
 # that the maximum time we will allow over all simulations at a given temperature is 600s (via the 'maxtime'
 # argument).
 
-measurement_template = measurement.Measurement(interface, observables, precisions=precisions, maxsims=20, maxtime=600)
+measurement_template = measurement.Measurement(interface, observables, precisions=precisions, maxsims=20, maxtime=600, inputdir = args.InputFolder)
 
 # Set up the list of temperatures to consider
 
@@ -284,30 +146,16 @@ molchempots = args.Pressures
 # and explore the temperatures in 'molchempots' accordingly
 
 sweep = measurement.MeasurementSweep(param="molchempot", paramvalues=molchempots, 
-                                     measurement_template=measurement_template, outputdir="bounds_scan")
+                                     measurement_template=measurement_template, outputdir=args.OutputFolder)
 
 # Run the task
+logging.debug(sweep)
+
+logging.info('Running sweep now...')
 
 sweep.run()
 
-import matplotlib.pyplot as plt
-import pandas as pd
-
-data = pd.read_csv(pathlib.Path('/run/bounds_scan/nmol_1_sweep.dat'),
-                   sep=' ',
-                   header=None,
-                   names=['Fugacity (katm)', 'Quantity adsorbed (mol/uc)', 'Uncertainty']
-                   )
-
-plt.errorbar(data['Fugacity (katm)'], data['Quantity adsorbed (mol/uc)'], data['Uncertainty'], marker='.')
-plt.xlabel('Fugacity (katm)')
-plt.ylabel('Quantity adsorbed (mol/uc)')
-plt.xscale('log')
-plt.savefig(output_folder / 'bounds_scan.png')
-plt.clf()
-
-
-data.to_csv(output_folder / 'simulation_data.csv', sep=',', index=False)
+# Add in some kind of result wrapper here!
 
 print('Script complete!')
 
