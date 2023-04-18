@@ -35,3 +35,4 @@ RUN wget -q https://gitlab.com/dl_monte/DL_MONTE-2/-/archive/master/DL_MONTE-2-m
 
 # Copy Python scripts to image
 COPY scripts/*.py /run
+COPY test_io /test_io
