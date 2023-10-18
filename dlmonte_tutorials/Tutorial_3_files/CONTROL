@@ -1,0 +1,22 @@
+RDF example
+use ortho
+finish use-block
+seeds 12 34 56 78
+nbrlist auto
+maxnonbondnbrs 512
+temperature 1
+pressure 0.02
+steps 110000
+equilibration 10000
+print 10000
+stack 10000
+yamldata 1000
+revconformat dlmonte
+archiveformat dlpoly4
+sample coords 10000
+sample volume 1 1.0
+sample rdf 500 5.0 1000
+move atom 1 512
+LJ core
+move volume cubic linear 1
+start simulation

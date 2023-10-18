@@ -1,0 +1,20 @@
+Control file for a rigid diamond lattice of carbon atoms and an LJ solvent
+use gaspressure
+finish use-block
+temperature 0.7
+noewald all
+steps 1000000
+equilibration 1000
+print 1000
+stack 1000
+yamldata 1000
+archiveformat dlmonte
+revconformat dlmonte
+acceptmolmoveupdate 200
+sample rdf 400 4.0 1000
+sample coords 10000
+move molecule 1 25
+LJ_Solvent
+move gcinsertmol 1 50 0.75
+LJ_Solvent 0.025
+start simulation

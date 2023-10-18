@@ -1,0 +1,19 @@
+Field file for a rigid diamond lattice of carbon atoms and an LJ solvent
+CUTOFF 2.5
+UNITS K
+NCONFIGS 1
+ATOMS 2
+Frame core 1.0 0.0
+LJ core 1.0 0.0
+MOLTYPES 2
+diamond_lattice
+MAXATOM 56
+LJ_Solvent
+ATOMS 1 1
+LJ core 0.0 0.0 0.0
+RIGID
+FINISH
+VDW 2
+Frame core LJ core lj 1 1
+LJ core LJ core lj 1 1
+CLOSE

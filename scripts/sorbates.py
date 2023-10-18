@@ -1,6 +1,37 @@
 import dlmolecule as dlm
 from ase import Atoms
 
+<<<<<<< Updated upstream
+=======
+LJ = dlm.DLMolecule(
+    name = 'LJ',
+    molecule = Atoms(
+    'He',
+    positions=[(0,0,0)],
+    tags = [0],
+    charges = [0]
+    ),
+    tags = {0: 'He'}, #helium for ease of reading back in with ASE later on
+    potentials = {
+    0: [1,1,0]
+    }
+)
+
+Methane = dlm.DLMolecule(
+    name = 'Methane',
+    molecule = Atoms(
+        'C',
+    positions=[(0,0,0)],
+    tags = [0],
+    charges = [0]
+    ),
+    tags = {0: 'C'}, #helium for ease of reading back in with ASE later on
+    potentials = {
+    0: [148,3.73,0]
+    }    
+    )
+
+>>>>>>> Stashed changes
 Nitrogen = dlm.DLMolecule(
     name='Nitrogen',
     molecule=Atoms(
@@ -344,6 +375,7 @@ methanol_cgenff = dlm.DLMolecule(
     }
 )
 
+<<<<<<< Updated upstream
 ethanol_cgenff = dlm.DLMolecule(
     name = 'EtOH',
     molecules = Atoms(
@@ -453,6 +485,40 @@ TIP4P = dlm.DLMolecule(
         2: [0,0,-1.1128]
     }
 )
+=======
+MeOH_4P = MeOH = dlm.DLMolecule(
+    name='MeOH',
+    molecule=Atoms(
+        'HOCX',
+        positions=[(0.945, 0.000, 0.000), (0, 0, 0), (-0.454, 1.356,0), (-0.0216,-0.0300,0)],
+        tags=[0, 1, 2,3]
+    ),
+    tags={0: 'H', 1: 'O', 2: 'Me', 3: 'He'},
+    potentials={
+        0: [0, 0, 0.4998],
+        1: [90.118, 3.1655, 0],
+        2: [106.032, 3.637, 0.1546],
+        3: [0,0,-0.6544]
+    }  # eps, sigma, q
+)  # MeOH-4P (10.1021/acs.jctc.7b01265)
+
+
+MeOH_MD2 = MeOH = dlm.DLMolecule(
+    name='MeOH',
+    molecule=Atoms(
+        'HOCX',
+        positions=[(0.945, 0.000, 0.000), (0, 0, 0), (-0.454, 1.356,0), (-0.088,-0.122,0)],
+        tags=[0, 1, 2,3]
+    ),
+    tags={0: 'H', 1: 'O', 2: 'Me', 3: 'He'},
+    potentials={
+        0: [0, 0, 0.3844],
+        1: [88.345, 3.026, 0],
+        2: [93.098, 3.758, 0.2474],
+        3: [0,0,-0.6318]
+    }  # eps, sigma, q
+)  # MeOH-MD2 (10.1021/acs.jctc.7b01265)
+>>>>>>> Stashed changes
 
 
 lookup = {
@@ -467,10 +533,16 @@ lookup = {
     'CCl4': CCl4,
     'Dichloromethane': CH2Cl2,
     'Cyclohexane': cyclohexane,
+<<<<<<< Updated upstream
     'water': TIP4P,
     'cgenff_meoh': methanol_cgenff,
     'cgenff_etoh': ethanol_cgenff,
     'cgenff_IPA': IPA_cgenff,
     'cgenff_DMF': DMF_cgenff,
     'DMSO': DMSO
+=======
+    'Methane': Methane,
+    
+
+>>>>>>> Stashed changes
 }

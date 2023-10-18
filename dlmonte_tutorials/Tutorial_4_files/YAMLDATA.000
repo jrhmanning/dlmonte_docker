@@ -1,0 +1,54 @@
+temperature:       1.42834615117450E+00
+ensemblemols:    
+  - activity:          6.17700000000000E-02
+---
+-
+  timestamp:                     1000
+  energy:       -6.00000911591487E+07
+  energyvdw:    -6.00000911591487E+07
+  nmol:          [    107 ]
+-
+  timestamp:                     2000
+  energy:       -6.00001407712345E+07
+  energyvdw:    -6.00001407712345E+07
+  nmol:          [    132 ]
+-
+  timestamp:                     3000
+  energy:       -6.00002263923922E+07
+  energyvdw:    -6.00002263923922E+07
+  nmol:          [    176 ]
+-
+  timestamp:                     4000
+  energy:       -6.00001982480773E+07
+  energyvdw:    -6.00001982480773E+07
+  nmol:          [    166 ]
+-
+  timestamp:                     5000
+  energy:       -6.00002140807072E+07
+  energyvdw:    -6.00002140807072E+07
+  nmol:          [    172 ]
+-
+  timestamp:                     6000
+  energy:       -6.00002331698093E+07
+  energyvdw:    -6.00002331698093E+07
+  nmol:          [    167 ]
+-
+  timestamp:                     7000
+  energy:       -6.00002797933507E+07
+  energyvdw:    -6.00002797933507E+07
+  nmol:          [    191 ]
+-
+  timestamp:                     8000
+  energy:       -6.00002516100059E+07
+  energyvdw:    -6.00002516100059E+07
+  nmol:          [    178 ]
+-
+  timestamp:                     9000
+  energy:       -6.00002337176487E+07
+  energyvdw:    -6.00002337176487E+07
+  nmol:          [    170 ]
+-
+  timestamp:                    10000
+  energy:       -6.00002457488724E+07
+  energyvdw:    -6.00002457488724E+07
+  nmol:          [    176 ]

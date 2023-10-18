@@ -1,0 +1,663 @@
+temperature:       1.00000000000000E+00
+pressure:          1.22038599149186E-01
+---
+-
+  timestamp:                     1000
+  energy:       -7.66687542367914E+02
+  enthalpy:     -5.28840968248946E+02
+  energyvdw:    -7.66687542367914E+02
+  volume:        1.62045287826024E+03
+-
+  timestamp:                     2000
+  energy:       -8.06676393814726E+02
+  enthalpy:     -5.68865641368387E+02
+  energyvdw:    -8.06676393814726E+02
+  volume:        1.62020882457677E+03
+-
+  timestamp:                     3000
+  energy:       -8.69896367389803E+02
+  enthalpy:     -6.32004838852541E+02
+  energyvdw:    -8.69896367389803E+02
+  volume:        1.62075915350000E+03
+-
+  timestamp:                     4000
+  energy:       -9.09199770143798E+02
+  enthalpy:     -6.71343215398276E+02
+  energyvdw:    -9.09199770143798E+02
+  volume:        1.62052087644389E+03
+-
+  timestamp:                     5000
+  energy:       -9.54166932925420E+02
+  enthalpy:     -7.16467331390978E+02
+  energyvdw:    -9.54166932925420E+02
+  volume:        1.61945155146585E+03
+-
+  timestamp:                     6000
+  energy:       -9.70470210383523E+02
+  enthalpy:     -7.32852088763311E+02
+  energyvdw:    -9.70470210383523E+02
+  volume:        1.61889642738208E+03
+-
+  timestamp:                     7000
+  energy:       -9.85422996335155E+02
+  enthalpy:     -7.47690408012338E+02
+  energyvdw:    -9.85422996335155E+02
+  volume:        1.61967629103321E+03
+-
+  timestamp:                     8000
+  energy:       -1.01993536132727E+03
+  enthalpy:     -7.82486101082296E+02
+  energyvdw:    -1.01993536132727E+03
+  volume:        1.61774597187291E+03
+-
+  timestamp:                     9000
+  energy:       -1.03659614021721E+03
+  enthalpy:     -7.99237025191963E+02
+  energyvdw:    -1.03659614021721E+03
+  volume:        1.61713181091090E+03
+-
+  timestamp:                    10000
+  energy:       -1.03354292872429E+03
+  enthalpy:     -7.96103504565434E+02
+  energyvdw:    -1.03354292872429E+03
+  volume:        1.61767895844578E+03
+-
+  timestamp:                    11000
+  energy:       -1.02325343666060E+03
+  enthalpy:     -7.85360291422883E+02
+  energyvdw:    -1.02325343666060E+03
+  volume:        1.62077016810853E+03
+-
+  timestamp:                    12000
+  energy:       -1.04661396083035E+03
+  enthalpy:     -8.08942573394935E+02
+  energyvdw:    -1.04661396083035E+03
+  volume:        1.61925932831463E+03
+-
+  timestamp:                    13000
+  energy:       -1.04923389014939E+03
+  enthalpy:     -8.11562502713978E+02
+  energyvdw:    -1.04923389014939E+03
+  volume:        1.61925932831463E+03
+-
+  timestamp:                    14000
+  energy:       -1.06023353539476E+03
+  enthalpy:     -8.22449965483682E+02
+  energyvdw:    -1.06023353539476E+03
+  volume:        1.62002362948760E+03
+-
+  timestamp:                    15000
+  energy:       -1.05724904412555E+03
+  enthalpy:     -8.19465474214472E+02
+  energyvdw:    -1.05724904412555E+03
+  volume:        1.62002362948760E+03
+-
+  timestamp:                    16000
+  energy:       -1.06553703606682E+03
+  enthalpy:     -8.27596318451082E+02
+  energyvdw:    -1.06553703606682E+03
+  volume:        1.62109427955379E+03
+-
+  timestamp:                    17000
+  energy:       -1.05696712667256E+03
+  enthalpy:     -8.19388772061919E+02
+  energyvdw:    -1.05696712667256E+03
+  volume:        1.61862549404886E+03
+-
+  timestamp:                    18000
+  energy:       -1.08272504257453E+03
+  enthalpy:     -8.45006861015825E+02
+  energyvdw:    -1.08272504257453E+03
+  volume:        1.61957813749683E+03
+-
+  timestamp:                    19000
+  energy:       -1.08118263909617E+03
+  enthalpy:     -8.43164352507893E+02
+  energyvdw:    -1.08118263909617E+03
+  volume:        1.62162275832331E+03
+-
+  timestamp:                    20000
+  energy:       -1.06644091891832E+03
+  enthalpy:     -8.28031313205156E+02
+  energyvdw:    -1.06644091891832E+03
+  volume:        1.62428882237987E+03
+-
+  timestamp:                    21000
+  energy:       -1.08279881697861E+03
+  enthalpy:     -8.44744341665348E+02
+  energyvdw:    -1.08279881697861E+03
+  volume:        1.62186931274088E+03
+-
+  timestamp:                    22000
+  energy:       -1.09050891299579E+03
+  enthalpy:     -8.52454437682533E+02
+  energyvdw:    -1.09050891299579E+03
+  volume:        1.62186931274088E+03
+-
+  timestamp:                    23000
+  energy:       -1.08610167144781E+03
+  enthalpy:     -8.48463167370499E+02
+  energyvdw:    -1.08610167144781E+03
+  volume:        1.61903529341956E+03
+-
+  timestamp:                    24000
+  energy:       -1.09204063716318E+03
+  enthalpy:     -8.54473324619650E+02
+  energyvdw:    -1.09204063716318E+03
+  volume:        1.61855026425212E+03
+-
+  timestamp:                    25000
+  energy:       -1.09903991061220E+03
+  enthalpy:     -8.61255547639586E+02
+  energyvdw:    -1.09903991061220E+03
+  volume:        1.62002903262972E+03
+-
+  timestamp:                    26000
+  energy:       -1.09908025503777E+03
+  enthalpy:     -8.60813599564609E+02
+  energyvdw:    -1.09908025503777E+03
+  volume:        1.62331489988923E+03
+-
+  timestamp:                    27000
+  energy:       -1.10542335196903E+03
+  enthalpy:     -8.67336470259078E+02
+  energyvdw:    -1.10542335196903E+03
+  volume:        1.62209009808952E+03
+-
+  timestamp:                    28000
+  energy:       -1.11263500801721E+03
+  enthalpy:     -8.74820129104012E+02
+  energyvdw:    -1.11263500801721E+03
+  volume:        1.62023693826778E+03
+-
+  timestamp:                    29000
+  energy:       -1.10129917768478E+03
+  enthalpy:     -8.63484298771589E+02
+  energyvdw:    -1.10129917768478E+03
+  volume:        1.62023693826778E+03
+-
+  timestamp:                    30000
+  energy:       -1.05556700685970E+03
+  enthalpy:     -8.18649560856829E+02
+  energyvdw:    -1.05556700685970E+03
+  volume:        1.61412271212023E+03
+-
+  timestamp:                    31000
+  energy:       -1.08059908167515E+03
+  enthalpy:     -8.44456512390055E+02
+  energyvdw:    -1.08059908167515E+03
+  volume:        1.60884346346059E+03
+-
+  timestamp:                    32000
+  energy:       -1.07097891561655E+03
+  enthalpy:     -8.34836346331460E+02
+  energyvdw:    -1.07097891561655E+03
+  volume:        1.60884346346059E+03
+-
+  timestamp:                    33000
+  energy:       -1.08167829609594E+03
+  enthalpy:     -8.45535726810848E+02
+  energyvdw:    -1.08167829609594E+03
+  volume:        1.60884346346059E+03
+-
+  timestamp:                    34000
+  energy:       -1.06780680573414E+03
+  enthalpy:     -8.32204112180464E+02
+  energyvdw:    -1.06780680573414E+03
+  volume:        1.60516528063992E+03
+-
+  timestamp:                    35000
+  energy:       -1.08813513307425E+03
+  enthalpy:     -8.51947508965140E+02
+  energyvdw:    -1.08813513307425E+03
+  volume:        1.60915042276632E+03
+-
+  timestamp:                    36000
+  energy:       -1.09856999344602E+03
+  enthalpy:     -8.63016925080376E+02
+  energyvdw:    -1.09856999344602E+03
+  volume:        1.60482718336407E+03
+-
+  timestamp:                    37000
+  energy:       -1.08948127558905E+03
+  enthalpy:     -8.54885985223096E+02
+  energyvdw:    -1.08948127558905E+03
+  volume:        1.59830182506503E+03
+-
+  timestamp:                    38000
+  energy:       -1.10766374802830E+03
+  enthalpy:     -8.75401357661243E+02
+  energyvdw:    -1.10766374802830E+03
+  volume:        1.58240773648330E+03
+-
+  timestamp:                    39000
+  energy:       -1.14653390965703E+03
+  enthalpy:     -9.14271519289970E+02
+  energyvdw:    -1.14653390965703E+03
+  volume:        1.58240773648330E+03
+-
+  timestamp:                    40000
+  energy:       -1.15898614646963E+03
+  enthalpy:     -9.30045553608901E+02
+  energyvdw:    -1.15898614646963E+03
+  volume:        1.55977627185081E+03
+-
+  timestamp:                    41000
+  energy:       -1.13508074131170E+03
+  enthalpy:     -9.05434483610270E+02
+  energyvdw:    -1.13508074131170E+03
+  volume:        1.56458397877888E+03
+-
+  timestamp:                    42000
+  energy:       -1.14306383342114E+03
+  enthalpy:     -9.13417575719708E+02
+  energyvdw:    -1.14306383342114E+03
+  volume:        1.56458397877888E+03
+-
+  timestamp:                    43000
+  energy:       -1.15161485065384E+03
+  enthalpy:     -9.22569291517950E+02
+  energyvdw:    -1.15161485065384E+03
+  volume:        1.56049140892329E+03
+-
+  timestamp:                    44000
+  energy:       -1.13573546270924E+03
+  enthalpy:     -9.06969287719593E+02
+  energyvdw:    -1.13573546270924E+03
+  volume:        1.55858795983806E+03
+-
+  timestamp:                    45000
+  energy:       -1.15135722379514E+03
+  enthalpy:     -9.22009148945697E+02
+  energyvdw:    -1.15135722379514E+03
+  volume:        1.56255245378196E+03
+-
+  timestamp:                    46000
+  energy:       -1.15214967881050E+03
+  enthalpy:     -9.22946269682794E+02
+  energyvdw:    -1.15214967881050E+03
+  volume:        1.56156684368416E+03
+-
+  timestamp:                    47000
+  energy:       -1.14906925405725E+03
+  enthalpy:     -9.18903781805188E+02
+  energyvdw:    -1.14906925405725E+03
+  volume:        1.56812139661269E+03
+-
+  timestamp:                    48000
+  energy:       -1.15504530848864E+03
+  enthalpy:     -9.24879836236582E+02
+  energyvdw:    -1.15504530848864E+03
+  volume:        1.56812139661269E+03
+-
+  timestamp:                    49000
+  energy:       -1.12426891449061E+03
+  enthalpy:     -8.94361975634543E+02
+  energyvdw:    -1.12426891449061E+03
+  volume:        1.56636000405443E+03
+-
+  timestamp:                    50000
+  energy:       -1.13367140952222E+03
+  enthalpy:     -9.02625997745916E+02
+  energyvdw:    -1.13367140952222E+03
+  volume:        1.57411644001424E+03
+-
+  timestamp:                    51000
+  energy:       -1.12857804131152E+03
+  enthalpy:     -8.97754446263031E+02
+  energyvdw:    -1.12857804131152E+03
+  volume:        1.57260519875984E+03
+-
+  timestamp:                    52000
+  energy:       -1.12916253465547E+03
+  enthalpy:     -8.96701333390548E+02
+  energyvdw:    -1.12916253465547E+03
+  volume:        1.58376223861507E+03
+-
+  timestamp:                    53000
+  energy:       -1.14177077514115E+03
+  enthalpy:     -9.09309573876220E+02
+  energyvdw:    -1.14177077514115E+03
+  volume:        1.58376223861507E+03
+-
+  timestamp:                    54000
+  energy:       -1.15849863262665E+03
+  enthalpy:     -9.27562856837126E+02
+  energyvdw:    -1.15849863262665E+03
+  volume:        1.57336948811470E+03
+-
+  timestamp:                    55000
+  energy:       -1.16497120129638E+03
+  enthalpy:     -9.35778592623359E+02
+  energyvdw:    -1.16497120129638E+03
+  volume:        1.56149325999708E+03
+-
+  timestamp:                    56000
+  energy:       -1.17033739859330E+03
+  enthalpy:     -9.41871418018387E+02
+  energyvdw:    -1.17033739859330E+03
+  volume:        1.55654273002890E+03
+-
+  timestamp:                    57000
+  energy:       -1.18128259007447E+03
+  enthalpy:     -9.52293878207089E+02
+  energyvdw:    -1.18128259007447E+03
+  volume:        1.56010410748653E+03
+-
+  timestamp:                    58000
+  energy:       -1.18506345046334E+03
+  enthalpy:     -9.56074738595960E+02
+  energyvdw:    -1.18506345046334E+03
+  volume:        1.56010410748653E+03
+-
+  timestamp:                    59000
+  energy:       -1.18765120250635E+03
+  enthalpy:     -9.60637256124894E+02
+  energyvdw:    -1.18765120250635E+03
+  volume:        1.54664999561878E+03
+-
+  timestamp:                    60000
+  energy:       -1.20598828900936E+03
+  enthalpy:     -9.80211775360154E+02
+  energyvdw:    -1.20598828900936E+03
+  volume:        1.53821934472526E+03
+-
+  timestamp:                    61000
+  energy:       -1.21394593468855E+03
+  enthalpy:     -9.90256410794132E+02
+  energyvdw:    -1.21394593468855E+03
+  volume:        1.52400064694675E+03
+-
+  timestamp:                    62000
+  energy:       -1.20770937200696E+03
+  enthalpy:     -9.85001903464505E+02
+  energyvdw:    -1.20770937200696E+03
+  volume:        1.51730988662112E+03
+-
+  timestamp:                    63000
+  energy:       -1.22443889427391E+03
+  enthalpy:     -1.00173142573145E+03
+  energyvdw:    -1.22443889427391E+03
+  volume:        1.51730988662112E+03
+-
+  timestamp:                    64000
+  energy:       -1.21081076513679E+03
+  enthalpy:     -9.90212437791331E+02
+  energyvdw:    -1.21081076513679E+03
+  volume:        1.50294027067860E+03
+-
+  timestamp:                    65000
+  energy:       -1.21539937280454E+03
+  enthalpy:     -9.95498049733066E+02
+  energyvdw:    -1.21539937280454E+03
+  volume:        1.49819156834338E+03
+-
+  timestamp:                    66000
+  energy:       -1.22181246198575E+03
+  enthalpy:     -1.00287593158581E+03
+  energyvdw:    -1.22181246198575E+03
+  volume:        1.49161841896211E+03
+-
+  timestamp:                    67000
+  energy:       -1.22852404797354E+03
+  enthalpy:     -1.01277173024583E+03
+  energyvdw:    -1.22852404797354E+03
+  volume:        1.46992432221586E+03
+-
+  timestamp:                    68000
+  energy:       -1.25177487767730E+03
+  enthalpy:     -1.03785863623105E+03
+  energyvdw:    -1.25177487767730E+03
+  volume:        1.45741510232895E+03
+-
+  timestamp:                    69000
+  energy:       -1.26104628816601E+03
+  enthalpy:     -1.04948856685346E+03
+  energyvdw:    -1.26104628816601E+03
+  volume:        1.44134646331982E+03
+-
+  timestamp:                    70000
+  energy:       -1.28024758145611E+03
+  enthalpy:     -1.06868986014355E+03
+  energyvdw:    -1.28024758145611E+03
+  volume:        1.44134646331982E+03
+-
+  timestamp:                    71000
+  energy:       -1.25564735683802E+03
+  enthalpy:     -1.04408963552546E+03
+  energyvdw:    -1.25564735683802E+03
+  volume:        1.44134646331982E+03
+-
+  timestamp:                    72000
+  energy:       -1.28388772624014E+03
+  enthalpy:     -1.07464517056603E+03
+  energyvdw:    -1.28388772624014E+03
+  volume:        1.42557319924670E+03
+-
+  timestamp:                    73000
+  energy:       -1.28326735256437E+03
+  enthalpy:     -1.07442481282663E+03
+  energyvdw:    -1.28326735256437E+03
+  volume:        1.42284788366102E+03
+-
+  timestamp:                    74000
+  energy:       -1.28554338222177E+03
+  enthalpy:     -1.07801486771713E+03
+  energyvdw:    -1.28554338222177E+03
+  volume:        1.41389540671674E+03
+-
+  timestamp:                    75000
+  energy:       -1.30303255877038E+03
+  enthalpy:     -1.09919909841554E+03
+  energyvdw:    -1.30303255877038E+03
+  volume:        1.38872093803010E+03
+-
+  timestamp:                    76000
+  energy:       -1.30457529367644E+03
+  enthalpy:     -1.10414197522243E+03
+  energyvdw:    -1.30457529367644E+03
+  volume:        1.36555571166472E+03
+-
+  timestamp:                    77000
+  energy:       -1.31771811320118E+03
+  enthalpy:     -1.11728479474717E+03
+  energyvdw:    -1.31771811320118E+03
+  volume:        1.36555571166472E+03
+-
+  timestamp:                    78000
+  energy:       -1.33076060478002E+03
+  enthalpy:     -1.13344035937627E+03
+  energyvdw:    -1.33076060478002E+03
+  volume:        1.34434629040978E+03
+-
+  timestamp:                    79000
+  energy:       -1.34990848085004E+03
+  enthalpy:     -1.15267060681453E+03
+  energyvdw:    -1.34990848085004E+03
+  volume:        1.34378509283432E+03
+-
+  timestamp:                    80000
+  energy:       -1.35468018795712E+03
+  enthalpy:     -1.16064698736855E+03
+  energyvdw:    -1.35468018795712E+03
+  volume:        1.32195159647131E+03
+-
+  timestamp:                    81000
+  energy:       -1.35300890229542E+03
+  enthalpy:     -1.15973198534411E+03
+  energyvdw:    -1.35300890229542E+03
+  volume:        1.31679902279509E+03
+-
+  timestamp:                    82000
+  energy:       -1.36996037716230E+03
+  enthalpy:     -1.18099205874929E+03
+  energyvdw:    -1.36996037716230E+03
+  volume:        1.28744446543592E+03
+-
+  timestamp:                    83000
+  energy:       -1.40477093826876E+03
+  enthalpy:     -1.21910978748509E+03
+  energyvdw:    -1.40477093826876E+03
+  volume:        1.26491267441176E+03
+-
+  timestamp:                    84000
+  energy:       -1.41585533498694E+03
+  enthalpy:     -1.23019418420328E+03
+  energyvdw:    -1.41585533498694E+03
+  volume:        1.26491267441176E+03
+-
+  timestamp:                    85000
+  energy:       -1.43924017140077E+03
+  enthalpy:     -1.25813159291019E+03
+  energyvdw:    -1.43924017140077E+03
+  volume:        1.23389591958508E+03
+-
+  timestamp:                    86000
+  energy:       -1.43922981214722E+03
+  enthalpy:     -1.25933949542492E+03
+  energyvdw:    -1.43922981214722E+03
+  volume:        1.22559588080501E+03
+-
+  timestamp:                    87000
+  energy:       -1.45840542085987E+03
+  enthalpy:     -1.27845941682269E+03
+  energyvdw:    -1.45840542085987E+03
+  volume:        1.22597527945736E+03
+-
+  timestamp:                    88000
+  energy:       -1.46335429650924E+03
+  enthalpy:     -1.28340829247207E+03
+  energyvdw:    -1.46335429650924E+03
+  volume:        1.22597527945736E+03
+-
+  timestamp:                    89000
+  energy:       -1.46574510983403E+03
+  enthalpy:     -1.29082083525095E+03
+  energyvdw:    -1.46574510983403E+03
+  volume:        1.19176214866962E+03
+-
+  timestamp:                    90000
+  energy:       -1.44535524328124E+03
+  enthalpy:     -1.26920958598968E+03
+  energyvdw:    -1.44535524328124E+03
+  volume:        1.20008345046993E+03
+-
+  timestamp:                    91000
+  energy:       -1.45669796788777E+03
+  enthalpy:     -1.28053140571222E+03
+  energyvdw:    -1.45669796788777E+03
+  volume:        1.20022587581101E+03
+-
+  timestamp:                    92000
+  energy:       -1.48311688085299E+03
+  enthalpy:     -1.31130962263013E+03
+  energyvdw:    -1.48311688085299E+03
+  volume:        1.17052586157484E+03
+-
+  timestamp:                    93000
+  energy:       -1.52429776978506E+03
+  enthalpy:     -1.35364460618751E+03
+  energyvdw:    -1.52429776978506E+03
+  volume:        1.16266299466456E+03
+-
+  timestamp:                    94000
+  energy:       -1.50625385762469E+03
+  enthalpy:     -1.33560069402714E+03
+  energyvdw:    -1.50625385762469E+03
+  volume:        1.16266299466456E+03
+-
+  timestamp:                    95000
+  energy:       -1.51392712035733E+03
+  enthalpy:     -1.34238182159404E+03
+  energyvdw:    -1.51392712035733E+03
+  volume:        1.16874112718538E+03
+-
+  timestamp:                    96000
+  energy:       -1.54853859234959E+03
+  enthalpy:     -1.38201559920031E+03
+  energyvdw:    -1.54853859234959E+03
+  volume:        1.13452407101009E+03
+-
+  timestamp:                    97000
+  energy:       -1.54244591738036E+03
+  enthalpy:     -1.37355160334536E+03
+  energyvdw:    -1.54244591738036E+03
+  volume:        1.15067992176719E+03
+-
+  timestamp:                    98000
+  energy:       -1.56003539597896E+03
+  enthalpy:     -1.38961437359353E+03
+  energyvdw:    -1.56003539597896E+03
+  volume:        1.16108141251761E+03
+-
+  timestamp:                    99000
+  energy:       -1.56312262286438E+03
+  enthalpy:     -1.39623348786869E+03
+  energyvdw:    -1.56312262286438E+03
+  volume:        1.13701860182718E+03
+-
+  timestamp:                   100000
+  energy:       -1.56111655884210E+03
+  enthalpy:     -1.39400908020196E+03
+  energyvdw:    -1.56111655884210E+03
+  volume:        1.13850618090372E+03
+-
+  timestamp:                   101000
+  energy:       -1.56521270205233E+03
+  enthalpy:     -1.39810522341220E+03
+  energyvdw:    -1.56521270205233E+03
+  volume:        1.13850618090372E+03
+-
+  timestamp:                   102000
+  energy:       -1.57908746525776E+03
+  enthalpy:     -1.41197998661763E+03
+  energyvdw:    -1.57908746525776E+03
+  volume:        1.13850618090372E+03
+-
+  timestamp:                   103000
+  energy:       -1.61814667674672E+03
+  enthalpy:     -1.45612311402690E+03
+  energyvdw:    -1.61814667674672E+03
+  volume:        1.10386937263174E+03
+-
+  timestamp:                   104000
+  energy:       -1.65072118931113E+03
+  enthalpy:     -1.49230911831822E+03
+  energyvdw:    -1.65072118931113E+03
+  volume:        1.07926421619688E+03
+-
+  timestamp:                   105000
+  energy:       -1.66604124042362E+03
+  enthalpy:     -1.50653119244052E+03
+  energyvdw:    -1.66604124042362E+03
+  volume:        1.08674475267551E+03
+-
+  timestamp:                   106000
+  energy:       -1.66773286446774E+03
+  enthalpy:     -1.50822281648464E+03
+  energyvdw:    -1.66773286446774E+03
+  volume:        1.08674475267551E+03
+-
+  timestamp:                   107000
+  energy:       -1.66055027386423E+03
+  enthalpy:     -1.50271040421052E+03
+  energyvdw:    -1.66055027386423E+03
+  volume:        1.07536579844383E+03
+-
+  timestamp:                   108000
+  energy:       -1.65275262454996E+03
+  enthalpy:     -1.49513508753854E+03
+  energyvdw:    -1.65275262454996E+03
+  volume:        1.07385104225507E+03
+-
+  timestamp:                   109000
+  energy:       -1.65049424815145E+03
+  enthalpy:     -1.49287671114003E+03
+  energyvdw:    -1.65049424815145E+03
+  volume:        1.07385104225507E+03
+-
+  timestamp:                   110000
+  energy:       -1.66603880999178E+03
+  enthalpy:     -1.51028979285593E+03
+  energyvdw:    -1.66603880999178E+03
+  volume:        1.06112078359278E+03

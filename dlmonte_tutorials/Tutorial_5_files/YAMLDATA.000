@@ -1,0 +1,805 @@
+temperature:       2.73000000000000E+02
+ensemblemols:    
+  - fixedn:           
+  - activity:          6.10192995745930E-04
+---
+-
+  timestamp:                     1000
+  energy:       -3.34914339309727E+05
+  energyrcp:     6.02761823359580E+02
+  energyreal:   -3.35514474264597E+05
+  energyvdw:    -2.62686848979463E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      1 ]
+-
+  timestamp:                     2000
+  energy:       -3.34945118629107E+05
+  energyrcp:     6.00146370969118E+02
+  energyreal:   -3.35520402347191E+05
+  energyvdw:    -2.48626528863862E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      8 ]
+-
+  timestamp:                     3000
+  energy:       -3.34932136960291E+05
+  energyrcp:     5.98008315685917E+02
+  energyreal:   -3.35512733407469E+05
+  energyvdw:    -1.74118685098516E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                     4000
+  energy:       -3.34931376030232E+05
+  energyrcp:     6.00357844607374E+02
+  energyreal:   -3.35514771253420E+05
+  energyvdw:    -1.69626214205140E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                     5000
+  energy:       -3.34929563702213E+05
+  energyrcp:     5.97917948071185E+02
+  energyreal:   -3.35511072524417E+05
+  energyvdw:    -1.64091258675553E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                     6000
+  energy:       -3.34933358629651E+05
+  energyrcp:     6.00383697225844E+02
+  energyreal:   -3.35517062513264E+05
+  energyvdw:    -1.66798136132402E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                     7000
+  energy:       -3.34924023404966E+05
+  energyrcp:     6.02058431250771E+02
+  energyreal:   -3.35518409637578E+05
+  energyvdw:    -7.67219863745410E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                     8000
+  energy:       -3.34928288376691E+05
+  energyrcp:     5.98980575508351E+02
+  energyreal:   -3.35514759974716E+05
+  energyvdw:    -1.25089774816053E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                     9000
+  energy:       -3.34927065507266E+05
+  energyrcp:     6.01058407366456E+02
+  energyreal:   -3.35517057265008E+05
+  energyvdw:    -1.10666496233066E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    10000
+  energy:       -3.34914676297564E+05
+  energyrcp:     6.02779236946904E+02
+  energyreal:   -3.35514574907155E+05
+  energyvdw:    -2.88062735538543E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      1 ]
+-
+  timestamp:                    11000
+  energy:       -3.34927178367267E+05
+  energyrcp:     6.01321929629432E+02
+  energyreal:   -3.35517176798676E+05
+  energyvdw:    -1.13234982195688E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    12000
+  energy:       -3.34923899270231E+05
+  energyrcp:     5.99836664239541E+02
+  energyreal:   -3.35513098557791E+05
+  energyvdw:    -1.06373766790251E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    13000
+  energy:       -3.34935091986853E+05
+  energyrcp:     5.98970818273234E+02
+  energyreal:   -3.35515673025082E+05
+  energyvdw:    -1.83897800439758E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    14000
+  energy:       -3.34928961519522E+05
+  energyrcp:     6.00832519472000E+02
+  energyreal:   -3.35517406874861E+05
+  energyvdw:    -1.23871641334507E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    15000
+  energy:       -3.34928981075577E+05
+  energyrcp:     5.99311829452677E+02
+  energyreal:   -3.35512077462923E+05
+  energyvdw:    -1.62154421064885E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    16000
+  energy:       -3.34933755288944E+05
+  energyrcp:     6.00585145364103E+02
+  energyreal:   -3.35518456087913E+05
+  energyvdw:    -1.58843463946606E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    17000
+  energy:       -3.34932880931629E+05
+  energyrcp:     6.01286762840437E+02
+  energyreal:   -3.35517709737196E+05
+  energyvdw:    -1.64579572736612E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    18000
+  energy:       -3.34925351892656E+05
+  energyrcp:     6.01676394328008E+02
+  energyreal:   -3.35514763111940E+05
+  energyvdw:    -1.22651750446737E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    19000
+  energy:       -3.34956980837493E+05
+  energyrcp:     5.97467752438277E+02
+  energyreal:   -3.35522111654036E+05
+  energyvdw:    -3.23369358959131E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,     10 ]
+-
+  timestamp:                    20000
+  energy:       -3.34936024087109E+05
+  energyrcp:     5.98089248362458E+02
+  energyreal:   -3.35515485907687E+05
+  energyvdw:    -1.86274277841919E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    21000
+  energy:       -3.34917655492721E+05
+  energyrcp:     5.99979395941434E+02
+  energyreal:   -3.35511112497465E+05
+  energyvdw:    -6.52239119748648E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    22000
+  energy:       -3.34910547998279E+05
+  energyrcp:     6.03312148449364E+02
+  energyreal:   -3.35513860146728E+05
+  energyvdw:     4.86375333464849E-14
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      0 ]
+-
+  timestamp:                    23000
+  energy:       -3.34933614194219E+05
+  energyrcp:     5.99835517921631E+02
+  energyreal:   -3.35517780425193E+05
+  energyvdw:    -1.56692869478284E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    24000
+  energy:       -3.34938905167553E+05
+  energyrcp:     5.98869302347383E+02
+  energyreal:   -3.35519273358957E+05
+  energyvdw:    -1.85011109429281E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    25000
+  energy:       -3.34936550282489E+05
+  energyrcp:     5.96767621731566E+02
+  energyreal:   -3.35515060200345E+05
+  energyvdw:    -1.82577038750614E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    26000
+  energy:       -3.34924506086491E+05
+  energyrcp:     5.99695998656992E+02
+  energyreal:   -3.35513303924394E+05
+  energyvdw:    -1.08981607536917E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    27000
+  energy:       -3.34915240639134E+05
+  energyrcp:     6.03072042512138E+02
+  energyreal:   -3.35515851226207E+05
+  energyvdw:    -2.46145543840213E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      1 ]
+-
+  timestamp:                    28000
+  energy:       -3.34918027225796E+05
+  energyrcp:     6.01168142853244E+02
+  energyreal:   -3.35512841609664E+05
+  energyvdw:    -6.35375898439718E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    29000
+  energy:       -3.34932931927302E+05
+  energyrcp:     5.99953403147692E+02
+  energyreal:   -3.35517636912361E+05
+  energyvdw:    -1.52484180882865E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    30000
+  energy:       -3.34920426065195E+05
+  energyrcp:     6.01777302807316E+02
+  energyreal:   -3.35516245872672E+05
+  energyvdw:    -5.95749533018441E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    31000
+  energy:       -3.34924229702156E+05
+  energyrcp:     6.02006898131247E+02
+  energyreal:   -3.35515751951866E+05
+  energyvdw:    -1.04846484211622E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    32000
+  energy:       -3.34921417255899E+05
+  energyrcp:     6.01883800778524E+02
+  energyreal:   -3.35516502549839E+05
+  energyvdw:    -6.79850683883931E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    33000
+  energy:       -3.34930658528445E+05
+  energyrcp:     5.99700827713208E+02
+  energyreal:   -3.35514100602702E+05
+  energyvdw:    -1.62587534557273E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    34000
+  energy:       -3.34925444355160E+05
+  energyrcp:     6.01463416603121E+02
+  energyreal:   -3.35516585023669E+05
+  energyvdw:    -1.03227480941218E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    35000
+  energy:       -3.34922835988071E+05
+  energyrcp:     6.02003561377102E+02
+  energyreal:   -3.35516684669604E+05
+  energyvdw:    -8.15487984314295E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    36000
+  energy:       -3.34930300016795E+05
+  energyrcp:     5.99701820311233E+02
+  energyreal:   -3.35515825932723E+05
+  energyvdw:    -1.41759043826510E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    37000
+  energy:       -3.34923081380702E+05
+  energyrcp:     5.98515421688390E+02
+  energyreal:   -3.35512507526136E+05
+  energyvdw:    -9.08927625391999E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    38000
+  energy:       -3.34933361491578E+05
+  energyrcp:     6.00069826296185E+02
+  energyreal:   -3.35515828754731E+05
+  energyvdw:    -1.76025631423842E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    39000
+  energy:       -3.34936643678104E+05
+  energyrcp:     6.02107540973839E+02
+  energyreal:   -3.35520339130292E+05
+  energyvdw:    -1.84120887848736E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    40000
+  energy:       -3.34922638256156E+05
+  energyrcp:     6.00325320593501E+02
+  energyreal:   -3.35513760919135E+05
+  energyvdw:    -9.20265761319270E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    41000
+  energy:       -3.34925624332395E+05
+  energyrcp:     6.01359252614211E+02
+  energyreal:   -3.35516928304428E+05
+  energyvdw:    -1.00552805797031E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    42000
+  energy:       -3.34933251720843E+05
+  energyrcp:     5.97575454843892E+02
+  energyreal:   -3.35512964359619E+05
+  energyvdw:    -1.78628160667263E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    43000
+  energy:       -3.34927891828999E+05
+  energyrcp:     6.01627213881747E+02
+  energyreal:   -3.35518102747197E+05
+  energyvdw:    -1.14162956818905E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    44000
+  energy:       -3.34933279852371E+05
+  energyrcp:     6.02515959417581E+02
+  energyreal:   -3.35521194231403E+05
+  energyvdw:    -1.46015803828776E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    45000
+  energy:       -3.34928589768858E+05
+  energyrcp:     5.99823233693324E+02
+  energyreal:   -3.35515546763063E+05
+  energyvdw:    -1.28662394860064E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    46000
+  energy:       -3.34940600173811E+05
+  energyrcp:     5.96531059551096E+02
+  energyreal:   -3.35514382319604E+05
+  energyvdw:    -2.27489137563773E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      7 ]
+-
+  timestamp:                    47000
+  energy:       -3.34926008509793E+05
+  energyrcp:     6.02310176501103E+02
+  energyreal:   -3.35518069816107E+05
+  energyvdw:    -1.02488701847609E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    48000
+  energy:       -3.34928572024001E+05
+  energyrcp:     6.01426200649948E+02
+  energyreal:   -3.35516927474573E+05
+  energyvdw:    -1.30707500764180E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    49000
+  energy:       -3.34929217981268E+05
+  energyrcp:     5.99034273390838E+02
+  energyreal:   -3.35514449123900E+05
+  energyvdw:    -1.38031307570591E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    50000
+  energy:       -3.34922952623726E+05
+  energyrcp:     6.00854564922385E+02
+  energyreal:   -3.35514953435724E+05
+  energyvdw:    -8.85375292208363E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    51000
+  energy:       -3.34925391805953E+05
+  energyrcp:     6.00351838121225E+02
+  energyreal:   -3.35515286277829E+05
+  energyvdw:    -1.04573662435280E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    52000
+  energy:       -3.34921016124672E+05
+  energyrcp:     6.02595915062598E+02
+  energyreal:   -3.35516537451612E+05
+  energyvdw:    -7.07458812022040E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    53000
+  energy:       -3.34922950335101E+05
+  energyrcp:     5.98317833971496E+02
+  energyreal:   -3.35512040059633E+05
+  energyvdw:    -9.22810943735590E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    54000
+  energy:       -3.34929183211480E+05
+  energyrcp:     6.00154049150855E+02
+  energyreal:   -3.35515862876510E+05
+  energyvdw:    -1.34743841170784E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    55000
+  energy:       -3.34928559538822E+05
+  energyrcp:     6.00056204103756E+02
+  energyreal:   -3.35515381191771E+05
+  energyvdw:    -1.32345511518290E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    56000
+  energy:       -3.34938015243307E+05
+  energyrcp:     6.00662907362314E+02
+  energyreal:   -3.35520587875425E+05
+  energyvdw:    -1.80902752411679E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    57000
+  energy:       -3.34919970309467E+05
+  energyrcp:     6.02910227913480E+02
+  energyreal:   -3.35517292730781E+05
+  energyvdw:    -5.58780659636810E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    58000
+  energy:       -3.34927034976120E+05
+  energyrcp:     6.01544525142214E+02
+  energyreal:   -3.35516516863631E+05
+  energyvdw:    -1.20626376274460E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    59000
+  energy:       -3.34926561351916E+05
+  energyrcp:     5.95940880133369E+02
+  energyreal:   -3.35509325203609E+05
+  energyvdw:    -1.31770284373953E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    60000
+  energy:       -3.34926007325268E+05
+  energyrcp:     6.01041884605453E+02
+  energyreal:   -3.35515405604618E+05
+  energyvdw:    -1.16436052519411E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    61000
+  energy:       -3.34939838813695E+05
+  energyrcp:     5.95985263770194E+02
+  energyreal:   -3.35513337655776E+05
+  energyvdw:    -2.24864216859305E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      7 ]
+-
+  timestamp:                    62000
+  energy:       -3.34921276842897E+05
+  energyrcp:     6.00241646095341E+02
+  energyreal:   -3.35513717975375E+05
+  energyvdw:    -7.80051361396356E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    63000
+  energy:       -3.34918073542890E+05
+  energyrcp:     6.01687106704105E+02
+  energyreal:   -3.35513292749242E+05
+  energyvdw:    -6.46790034889927E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    64000
+  energy:       -3.34931093849508E+05
+  energyrcp:     5.97289890098932E+02
+  energyreal:   -3.35512018385140E+05
+  energyvdw:    -1.63653544629929E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    65000
+  energy:       -3.34922406042618E+05
+  energyrcp:     6.01196586176153E+02
+  energyreal:   -3.35515333335664E+05
+  energyvdw:    -8.26929312721131E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    66000
+  energy:       -3.34919745869265E+05
+  energyrcp:     6.02022499548944E+02
+  energyreal:   -3.35514758441344E+05
+  energyvdw:    -7.00992746695728E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    67000
+  energy:       -3.34931778232641E+05
+  energyrcp:     5.97718237456378E+02
+  energyreal:   -3.35510875508309E+05
+  energyvdw:    -1.86209617857282E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    68000
+  energy:       -3.34920514759442E+05
+  energyrcp:     6.02031629151370E+02
+  energyreal:   -3.35515823280085E+05
+  energyvdw:    -6.72310850579797E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    69000
+  energy:       -3.34922804166450E+05
+  energyrcp:     6.00689748295635E+02
+  energyreal:   -3.35513325773987E+05
+  energyvdw:    -1.01681407555308E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    70000
+  energy:       -3.34915537653199E+05
+  energyrcp:     6.03489689751308E+02
+  energyreal:   -3.35516595349476E+05
+  energyvdw:    -2.43199347151477E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      1 ]
+-
+  timestamp:                    71000
+  energy:       -3.34919067679558E+05
+  energyrcp:     6.01541711853926E+02
+  energyreal:   -3.35511627858760E+05
+  energyvdw:    -8.98153264880459E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    72000
+  energy:       -3.34927910319989E+05
+  energyrcp:     6.01256011552360E+02
+  energyreal:   -3.35517648275207E+05
+  energyvdw:    -1.15180563310525E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    73000
+  energy:       -3.34937659901110E+05
+  energyrcp:     5.98975487116254E+02
+  energyreal:   -3.35516282196072E+05
+  energyvdw:    -2.03531921512755E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    74000
+  energy:       -3.34927569363702E+05
+  energyrcp:     6.03304624933838E+02
+  energyreal:   -3.35517156344012E+05
+  energyvdw:    -1.37176446201322E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    75000
+  energy:       -3.34929825613873E+05
+  energyrcp:     6.00423623742087E+02
+  energyreal:   -3.35513198565223E+05
+  energyvdw:    -1.70506723885526E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    76000
+  energy:       -3.34923968316579E+05
+  energyrcp:     6.00800212903584E+02
+  energyreal:   -3.35514155229109E+05
+  energyvdw:    -1.06133003699106E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    77000
+  energy:       -3.34922581186104E+05
+  energyrcp:     6.00768897914661E+02
+  energyreal:   -3.35513072881182E+05
+  energyvdw:    -1.02772028329170E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    78000
+  energy:       -3.34926174769075E+05
+  energyrcp:     5.99940891182092E+02
+  energyreal:   -3.35513648584914E+05
+  energyvdw:    -1.24670753390798E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    79000
+  energy:       -3.34936924228673E+05
+  energyrcp:     5.98221463307295E+02
+  energyreal:   -3.35516600169327E+05
+  energyvdw:    -1.85455226486026E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    80000
+  energy:       -3.34925381742847E+05
+  energyrcp:     5.99525936626872E+02
+  energyreal:   -3.35514654804005E+05
+  energyvdw:    -1.02528754639484E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    81000
+  energy:       -3.34919158797909E+05
+  energyrcp:     6.01786348612462E+02
+  energyreal:   -3.35514850712198E+05
+  energyvdw:    -6.09443431801609E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    82000
+  energy:       -3.34923722835317E+05
+  energyrcp:     6.00857041314640E+02
+  energyreal:   -3.35516340648082E+05
+  energyvdw:    -8.23922854493118E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    83000
+  energy:       -3.34921557379885E+05
+  energyrcp:     6.02354727195799E+02
+  energyreal:   -3.35515566537656E+05
+  energyvdw:    -8.34556942042856E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    84000
+  energy:       -3.34919140679400E+05
+  energyrcp:     6.02649079160816E+02
+  energyreal:   -3.35516514427679E+05
+  energyvdw:    -5.27533087643154E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    85000
+  energy:       -3.34925930259366E+05
+  energyrcp:     6.00456971205027E+02
+  energyreal:   -3.35513259568017E+05
+  energyvdw:    -1.31276625492375E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    86000
+  energy:       -3.34931673848659E+05
+  energyrcp:     5.98112515580923E+02
+  energyreal:   -3.35514175943944E+05
+  energyvdw:    -1.56104202912262E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                    87000
+  energy:       -3.34910547998282E+05
+  energyrcp:     6.03312148449364E+02
+  energyreal:   -3.35513860146726E+05
+  energyvdw:     2.85303966557593E-14
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      0 ]
+-
+  timestamp:                    88000
+  energy:       -3.34927990125219E+05
+  energyrcp:     6.01022640953296E+02
+  energyreal:   -3.35517635460327E+05
+  energyvdw:    -1.13773058401253E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    89000
+  energy:       -3.34922254867645E+05
+  energyrcp:     6.02353453013595E+02
+  energyreal:   -3.35513986114321E+05
+  energyvdw:    -1.06222063316977E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    90000
+  energy:       -3.34925028669253E+05
+  energyrcp:     6.00827035454883E+02
+  energyreal:   -3.35516317401812E+05
+  energyvdw:    -9.53830288956503E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    91000
+  energy:       -3.34916571010265E+05
+  energyrcp:     6.01419783242814E+02
+  energyreal:   -3.35513565726074E+05
+  energyvdw:    -4.42506742752754E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    92000
+  energy:       -3.34938385913083E+05
+  energyrcp:     5.97311855941231E+02
+  energyreal:   -3.35518085749837E+05
+  energyvdw:    -1.76120191807407E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      6 ]
+-
+  timestamp:                    93000
+  energy:       -3.34924818962833E+05
+  energyrcp:     6.00575543972388E+02
+  energyreal:   -3.35514358779614E+05
+  energyvdw:    -1.10357271838358E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    94000
+  energy:       -3.34955907194219E+05
+  energyrcp:     5.94576824502464E+02
+  energyreal:   -3.35517605648866E+05
+  energyvdw:    -3.28783698485494E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,     10 ]
+-
+  timestamp:                    95000
+  energy:       -3.34927920913262E+05
+  energyrcp:     6.00753187509391E+02
+  energyreal:   -3.35516419376379E+05
+  energyvdw:    -1.22547243855078E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      4 ]
+-
+  timestamp:                    96000
+  energy:       -3.34925687451233E+05
+  energyrcp:     6.02714910162787E+02
+  energyreal:   -3.35518717786540E+05
+  energyvdw:    -9.68457484940503E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      3 ]
+-
+  timestamp:                    97000
+  energy:       -3.34910547998283E+05
+  energyrcp:     6.03312148449364E+02
+  energyreal:   -3.35513860146725E+05
+  energyvdw:     6.08648461989531E-14
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      0 ]
+-
+  timestamp:                    98000
+  energy:       -3.34918984007051E+05
+  energyrcp:     6.01331764243160E+02
+  energyreal:   -3.35513202491388E+05
+  energyvdw:    -7.11327989887618E+00
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      2 ]
+-
+  timestamp:                    99000
+  energy:       -3.34933090869580E+05
+  energyrcp:     5.98602395175344E+02
+  energyreal:   -3.35514769969205E+05
+  energyvdw:    -1.69232955433659E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]
+-
+  timestamp:                   100000
+  energy:       -3.34932523886194E+05
+  energyrcp:     6.01493949728999E+02
+  energyreal:   -3.35518809594296E+05
+  energyvdw:    -1.52082416193090E+01
+  energypair:    0.00000000000000E+00
+  nmol:          [      1 ,      5 ]

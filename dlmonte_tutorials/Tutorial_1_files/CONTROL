@@ -1,0 +1,16 @@
+NVT simulation of Lennard-Jones fluid
+finish use-block
+seeds 12 34 56 78
+nbrlist auto
+maxnonbondnbrs 512
+temperature 1.4283461511745
+steps 10000
+equilibration 0
+print 1000
+stack 1000
+revconformat dlmonte
+archiveformat dlmonte
+sample coord 10000
+move atom 1 100
+LJ core
+start simulation

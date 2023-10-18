@@ -1,0 +1,13 @@
+Lennard-Jones, 2.5*sigma cut-off, sigma = 1 Angstrom, epsilon = 1 K
+CUTOFF 2.5
+UNITS K
+NCONFIGS 1
+ATOMS 1
+LJ core 1.0 0.0
+MOLTYPES 1
+lj
+MAXATOM 512
+FINISH
+VDW 1
+LJ core LJ core lj 1.0 1.0
+CLOSE

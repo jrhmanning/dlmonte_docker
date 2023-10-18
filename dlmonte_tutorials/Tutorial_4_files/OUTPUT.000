@@ -1,0 +1,705 @@
+
+                   ===================================================================
+                   * * *                                                         * * *
+                   * * *            D L - M O N T E - v e r. 2.0 (7)             * * *
+                   * * *                                                         * * *
+                   * * *           STFC / CCP5 - Daresbury Laboratory            * * *
+                   * * *                 program library  package                * * *
+                   * * *                                                         * * *
+                   * * *     general purpose Monte Carlo simulation software     * * *
+                   * * *                                                         * * *
+                   * * *     version:  2.07  / January 2020                      * * *
+                   * * *     author :  J. A. Purton (2007-2015)                  * * *
+                   * * *     website:  https://gitlab.com/dl_monte               * * *
+                   * * *     -----------------------------------------------     * * *
+                   * * *     co-authors:                                         * * *
+                   * * *     -------------                                       * * *
+                   * * *     A. V. Brukhno   - Free Energy Diff, planar pores    * * *
+                   * * *     T. L. Underwood - Lattice/Phase-Switch MC methods   * * *
+                   * * *     R. J. Grant     - extra potentials, optimizations   * * *
+                   * * *     -----------------------------------------------     * * *
+                   * * *                                                         * * *
+                   * * *     current execution:                                  * * *
+                   * * *     ==================                                  * * *
+                   * * *     number of nodes/CPUs/cores:          1              * * *
+                   * * *     number of threads per node:          1              * * *
+                   * * *     number of threads employed:          1              * * *
+                   * * *                                                         * * *
+                   * * * ======================================================= * * *
+                   * * * Publishing data obtained with DL_MONTE? - please cite:  * * *
+                   * * * ------------------------------------------------------- * * *
+                   * * *                                                         * * *
+                   * * *  A. V. Brukhno et al., Molecular Simulation 2019,       * * *
+                   * * *  DOI: 10.1080/08927022.2019.1569760,                    * * *
+                   * * *  `DL_MONTE: a multipurpose code for Monte Carlo         * * *
+                   * * *  simulation`                                            * * *
+                   * * *                                                         * * *
+                   * * *  J. A. Purton, J. C. Crabtree & S. C. Parker,           * * *
+                   * * *  Molecular Simulation 2013, 39 (14-15), 1240-1252       * * *
+                   * * *  `DL_MONTE: A general purpose program for parallel      * * *
+                   * * *  Monte Carlo simulation`                                * * *
+                   * * *                                                         * * *
+                   * * * ------------------------------------------------------- * * *
+                   * * * if using Lattice-Switch method, please also cite:       * * *
+                   * * * ------------------------------------------------------- * * *
+                   * * *              Bruce A.D., Wilding N.B. and G.J. Ackland, * * *
+                   * * *                         Phys. Rev. Lett. 1997, 79, 3002 * * *
+                   * * *    `Free Energy of Crystalline Solids: A Lattice-Switch * * *
+                   * * *                                      Monte Carlo Method`* * *
+                   * * * ------------------------------------------------------- * * *
+                   * * * if using Planar Pore (slit) geometry, please also cite: * * *
+                   * * * ------------------------------------------------------- * * *
+                   * * *                                         Broukhno A. V., * * *
+                   * * *     `Free Energy and Surface Forces in polymer systems: * * *
+                   * * *                          Monte Carlo Simulation Studies`* * *
+                   * * *                           PhD Thesis, Lund, Sweden 2003 * * *
+                   * * *                                                         * * *
+                   * * *    Brukhno A. V., Akinshina A., Coldrick Z., Nelson A., * * *
+                   * * *                                             and Auer S. * * *
+                   * * *                              Soft Matter. 2011, 7, 1006 * * *
+                   * * *               `Phase phenomena in supported lipid films * * *
+                   * * *                        under varying electric potential`* * *
+                   ===================================================================
+
+ ----------------------------------------------------------------------------------------------------
+ FIELD title  (100 symbols max) :
+ ----------------------------------------------------------------------------------------------------
+'lennard-jones, 2.5*sigma cut-off, sigma = 1 angstrom, epsilon = 1ev'
+ ----------------------------------------------------------------------------------------------------
+
+ reading species:   1 - molecule 'lj' of          1 atoms (         1 max)
+
+ WARNING: molecule 'lj' has no bond and is not 'rigid', so will be treated as 'atomic field'!
+
+ ------------------
+
+
+ ====================================================================================================
+ atom data :
+ ====================================================================================================
+ element           mass             charge
+ --------------------------------------------------
+  LJ               1.0000         0.0000
+
+
+ ====================================================================================================
+ molecule data :
+ ====================================================================================================
+ molecule name / rigid / exclude VDW & Coulomb
+ --------------------------------------------------
+ 'lj      '    /    F   /   F
+ --------------------------------------------------
+ 
+
+
+ ----------------------------------------------------------------------------------------------------
+ nonbonded (vdw) potentials :
+ ----------------------------------------------------------------------------------------------------
+ LJ      LJ         lj                0.500000       1.000000       1.000000       0.000000       0.000000       0.000000       0.000000
+
+ VdW repulsion capped at D_core(  1) =     0.429810 by E_cap = 0.100000E+06
+
+ NOTE: Standard simulation course (i.e. default behaviour)
+
+ NOTE: cell (box) type [ < 0 -> 2D-slit ] =          0 coultype =          1         0
+
+
+ DL_MONTE WARNING:    24
+
+
+ inconsistency between FIELD and CONTROL files:
+ charges are absent but Coulomb calculations are specified (by default)
+
+ NOTE: switching off Coulomb calculations!
+
+
+ --------------------------------------------------
+ configuration box No.          1
+ --------------------------------------------------
+ 
+ WARNING: initial atom position outside the primary cell (           1 
+ ) - molecule #           1 ,  atom #           1 ,  global #           1
+  -5.00000000000000       -5.00000000000000       -5.00000000000000     
+ 
+ WARNING: initial atom position outside the primary cell (           1 
+ ) - molecule #           2 ,  atom #           1 ,  global #           2
+  0.000000000000000E+000  -5.00000000000000       -5.00000000000000     
+ 
+ WARNING: initial atom position outside the primary cell (           1 
+ ) - molecule #           3 ,  atom #           1 ,  global #           3
+  0.000000000000000E+000  0.000000000000000E+000  -5.00000000000000     
+ 
+ WARNING: initial atom position outside the primary cell (           1 
+ ) - molecule #           5 ,  atom #           1 ,  global #           5
+   5.00000000000000        5.00000000000000        5.00000000000000     
+ 
+ WARNING: initial atom position outside the primary cell (           1 
+ ) - molecule #           6 ,  atom #           1 ,  global #           6
+  -5.00000000000000       -5.00000000000000       0.000000000000000E+000
+ 
+ WARNING: initial atom position outside the primary cell (           1 
+ ) - molecule #           7 ,  atom #           1 ,  global #           7
+   5.00000000000000       -5.00000000000000       -5.00000000000000     
+ 
+ WARNING: initial atom position outside the primary cell (           1 
+ ) - molecule #           8 ,  atom #           1 ,  global #           8
+  0.000000000000000E+000  -5.00000000000000        5.00000000000000     
+
+ the maximum no of atoms/molecules in this cell:     1000 /     1000
+
+ the factual no of atoms/molecules in this cell:        8 /        8
+
+          lattice vectors
+    10.00000     0.00000     0.00000
+     0.00000    10.00000     0.00000
+     0.00000     0.00000    10.00000
+
+          Using: is_simple_orthogonal:    F
+
+
+          Using: is_orthogonal:    F
+
+
+          reciprocal lattice vectors
+     0.10000     0.00000     0.00000
+     0.00000     0.10000     0.00000
+     0.00000     0.00000     0.10000
+
+
+ --------------------------------------------------
+ configuration sample (up to 10 atoms):
+ --------------------------------------------------
+
+ molecule lj      
+ LJ        c        1   type   1
+      0.0000000      0.0000000      0.0000000     0
+ molecule lj      
+ LJ        c        2   type   1
+      0.0000000      0.0000000      0.0000000     0
+ molecule lj      
+ LJ        c        3   type   1
+      0.0000000      0.0000000      0.0000000     0
+ molecule lj      
+ LJ        c        4   type   1
+      0.0000000      0.0000000      0.0000000     0
+ molecule lj      
+ LJ        c        5   type   1
+      0.0000000      0.0000000      0.0000000     0
+ molecule lj      
+ LJ        c        6   type   1
+      0.0000000      0.0000000      0.0000000     0
+ molecule lj      
+ LJ        c        7   type   1
+      0.0000000      0.0000000      0.0000000     0
+ molecule lj      
+ LJ        c        8   type   1
+      0.0000000      0.0000000      0.0000000     0
+
+
+ --------------------------------------------------
+ NOTE: FED calculation is OFF; order parameter =  0 (should be zero)
+
+
+ ==================================================
+                simulation parameters 
+ ==================================================
+
+ cell (box) type [ < 0 -> 2D-slit; else 3D-bulk ] =          0 (bulk: XYZ-PBC)
+
+ - no charges, no electrostatics required; pure short-range/VdW/metal(?) force-field
+
+ global cutoff for interactions (Angstroms)       =   0.2500000E+01
+
+ cutoff for vdw interactions (Angstroms)          =   0.2500000E+01
+
+ Verlet neighbour lists not used                  =   F  F
+
+ system temperature (Kelvin)                      =   0.1428346E+01
+
+ constant volume simulation (NVT), i.e. volume not sampled
+
+ system pressure (katms)                          =   0.1000000E-02
+
+ total number of MC steps (cycles)                =      10000
+
+ number of equilibration steps                    =          0
+
+ number of pre-heating steps                      =         -1
+
+ maximum no of non-bonded neighbours              =          0
+
+ maximum no of three-body triplets per atom       =          6
+
+ three body list updated every (cycles)           =         50
+
+ stack-size for block averaging                   =       1000
+
+ statistics data saved every (cycles) -> PTFILE*  =       1000
+
+ energy frames printed every (cycles) -> OUTPUT*  =       1000
+
+ energy checks printed every (cycles) -> OUTPUT*  =      10000
+
+ level of precision used in energy checks         =   0.1000000E-09
+
+ configurations stored every (cycles) -> REVCON*  =      10000
+
+ trajectories archived every (cycles) -> HISTORY* =      10000 (DL_POLY-4 format)
+
+ REVCON configuration data in DL_MONTE style (extended native)
+
+ HISTORY* in DL_POLY-4 (all/subset)
+
+ electrostatics is not used (no Coulomb interactions)
+
+ all g-vectors stored on each node
+
+ tolerance for rejection (energy units)           =   0.1000000E+03
+
+ random number generator seeded from user input
+
+ random number seeds (i,j,k,l) =     12    34    56    78 (for workgroup    0)
+
+ total job time and close time =      1000000.00         200.00
+
+ rotation of molecules will use Euler method
+
+ Grand-Canonical (GCMC, muVT) scheme using chemical activity (internal units)
+
+ Grand Canonical (GCMC) ensemble using molecules
+
+ the number of different molecule types           =     1
+
+ the frequency of mol insert/delete               =   100
+
+ the minimum distance for inserts                 =     0.7000
+
+ the number of atoms in molecule   1 is     1
+
+ the maximum number of atoms in molecule          =     1
+
+ molecule name lj      
+
+ Fuchs/Muller/Frenkel activity of molecs (deca-J) =     0.0618
+
+ number of moving particles for box    1         0
+
+ energy unit conversion factor (user -> internal) =        1.0000000000
+
+ beta (deca-J/mol) & Bjerrum length (Angstroem)   =        0.8420343550   116988.4502357700
+
+ ==================================================
+
+
+
+ Initialisation phase 1 - elapsed time:  0 h :  0 m :  0.002 s
+
+
+
+
+ Initialisation phase 2 - elapsed time:  0 h :  0 m :  0.002 s
+
+
+ --------------------------------------------------
+                  initial energies 
+ --------------------------------------------------
+ total_energy_nolist(): VdW energy > E_cap (overlap?) !!!
+  0.000000000000000E+000   10000000.0000000        100000.000000000     
+   9900000.00000000                1           1           2           1
+
+ break down of energies for box:   1
+
+ total energy                        0.1000000000E+08
+ reciprocal space coulomb            0.0000000000E+00
+ real space coulomb                  0.0000000000E+00
+ external mfa coulomb                0.0000000000E+00
+ nonbonded two body (vdw)            0.1000000000E+08
+ bonded two body (pair)              0.0000000000E+00
+ nonbonded three body                0.0000000000E+00
+ bonded three body (angle)           0.0000000000E+00
+ bonded four body (angle)            0.0000000000E+00
+ many body energy                    0.0000000000E+00
+ external potential energy           0.0000000000E+00
+ total virial                        0.0000000000E+00
+ volume                              0.1000000000E+04
+ 
+ long-range correction (vdw)         0.0000000000E+00
+
+ components of energies by  molecule: lj      
+
+ total energy                        0.0000000000E+00
+ reciprocal space coulomb            0.0000000000E+00
+ real space coulomb - other types    0.0000000000E+00
+ real space coulomb - same type      0.0000000000E+00
+ real space coulomb - self energy    0.0000000000E+00
+ real space coulomb - corection      0.0000000000E+00
+ vdw - other types mol               0.0000000000E+00
+ vdw - same type mol                 0.0000000000E+00
+ bonded two body (pair)              0.0000000000E+00
+ nonbonded three body                0.0000000000E+00
+ bonded three body (angle)           0.0000000000E+00
+ many body energy                    0.0000000000E+00
+ external potential energy           0.0000000000E+00
+
+
+ Initialisation phase 3 - elapsed time:  0 h :  0 m :  0.002 s
+
+
+ Resetting time and proceeding to simulation
+
+
+ Iteration         1000 - elapsed time:  0 h :  0 m :  0.007 s
+
+
+ ====================================================================================================
+      step      en-total            h-total             coul-rcp            coul
+ -real
+      step      en-vdw              en-three            en-pair             en-a
+ ngle 
+      step      en-four             en-many             en-external         en-e
+ xtMFA
+      step      volume              cell-a              cell-b              cell
+ -c   
+      step      alpha               beta                gamma 
+      r-av      en-total            h-total             coul-rcp            coul
+ -real
+      r-av      en-vdw              en-three            en-pair             en-a
+ ngle 
+      r-av      en-four             en-many             en-external         en-e
+ xtMFA
+      r-av      volume              cell-a              cell-b              cell
+ -c   
+      r-av      alpha               beta                gamma 
+ ----------------------------------------------------------------------------------------------------
+      1000    -0.6000009116E+08   -0.6999948707E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000009116E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.5869004101E+08   -0.6868963805E+08    0.0000000000E+00    0.0000000000E+00
+              -0.5869004101E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        107.0000         74.0380
+
+ lj              107.0000         74.0380
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration         2000 - elapsed time:  0 h :  0 m :  0.024 s
+
+
+      2000    -0.6000014077E+08   -0.6999938413E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000014077E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000011952E+08   -0.6999941552E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000011952E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        132.0000        123.3720
+
+ lj              132.0000        123.3720
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration         3000 - elapsed time:  0 h :  0 m :  0.039 s
+
+
+      3000    -0.6000022639E+08   -0.6999920127E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000022639E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000018102E+08   -0.6999930248E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000018102E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        176.0000        151.9780
+
+ lj              176.0000        151.9780
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration         4000 - elapsed time:  0 h :  0 m :  0.051 s
+
+
+      4000    -0.6000019825E+08   -0.6999923414E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000019825E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000022560E+08   -0.6999923053E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000022560E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        166.0000        171.0750
+
+ lj              166.0000        171.0750
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration         5000 - elapsed time:  0 h :  0 m :  0.061 s
+
+
+      5000    -0.6000021408E+08   -0.6999921336E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000021408E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000020305E+08   -0.6999922836E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000020305E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        172.0000        167.7340
+
+ lj              172.0000        167.7340
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration         6000 - elapsed time:  0 h :  0 m :  0.072 s
+
+
+      6000    -0.6000023317E+08   -0.6999926296E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000023317E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000019909E+08   -0.6999927196E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000019909E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        167.0000        159.9400
+
+ lj              167.0000        159.9400
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration         7000 - elapsed time:  0 h :  0 m :  0.082 s
+
+
+      7000    -0.6000027979E+08   -0.6999916314E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000027979E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000025555E+08   -0.6999919406E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000025555E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        191.0000        181.9590
+
+ lj              191.0000        181.9590
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration         8000 - elapsed time:  0 h :  0 m :  0.092 s
+
+
+      8000    -0.6000025161E+08   -0.6999921428E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000025161E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000024805E+08   -0.6999924498E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000024805E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        178.0000        172.3860
+
+ lj              178.0000        172.3860
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration         9000 - elapsed time:  0 h :  0 m :  0.102 s
+
+
+      9000    -0.6000023372E+08   -0.6999924520E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000023372E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000022985E+08   -0.6999925070E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000022985E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        170.0000        168.4650
+
+ lj              170.0000        168.4650
+ ----------------------------------------------------------------------------------------------------
+
+
+ Iteration        10000 - elapsed time:  0 h :  0 m :  0.113 s
+
+
+     10000    -0.6000024575E+08   -0.6999922062E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000024575E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+
+
+              -0.6000024502E+08   -0.6999922833E+08    0.0000000000E+00    0.0000000000E+00
+              -0.6000024502E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.1000000000E+04    0.1000000000E+02    0.1000000000E+02    0.1000000000E+02
+               0.9000000000E+02    0.9000000000E+02    0.9000000000E+02
+           
+ LJ       c        176.0000        174.6170
+
+ lj              176.0000        174.6170
+ ----------------------------------------------------------------------------------------------------
+ 
+ Workgroup    0, box    1 check: U_recalc - U_accum =  0.60000E+08  0.50522E+08  0.28706E+06 -0.24517E+06 (internal, kT, kT/atom, dU/U)
+ 
+ -------------------------------------------------------------------------------
+ ---------------------
+ 
+ *** WARNING *** Both absolute difference (kT) and relative error are too high..
+ .
+ *** WARNING *** Check Hamiltonian contributions:
+ 
+check_energy(   0): delta_U(VdW)   = -0.24473E+03 - -0.60000E+08 =  0.60000E+08  0.50522E+08 -0.24517E+06 (internal, kT, dU/U)
+ 
+ -------------------------------------------------------------------------------
+ ---------------------
+ 
+
+
+ ====================================================================================================
+                          averages and fluctuations
+ ----------------------------------------------------------------------------------------------------
+      avrg      en-total            h-total             coul-rcp            coul
+ -real
+      avrg      en-vdw              en-three            en-pair             en-a
+ ngle 
+      avrg      en-four             en-many             en-external         en-e
+ xtMFA
+      flct      en-total            h-total             coul-rcp            coul
+ -real
+      flct      en-vdw              en-three            en-pair             en-a
+ ngle 
+      flct      en-four             en-many             en-external         en-e
+ xtMFA
+ ----------------------------------------------------------------------------------------------------
+     10000    -0.5986919478E+08   -0.6986830050E+08    0.0000000000E+00    0.0000000000E+00
+              -0.5986919478E+08    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+
+               0.2170919092E+07    0.2170867431E+07    0.0000000000E+00    0.0000000000E+00
+               0.2170919092E+07    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+               0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+
+
+
+ average cell parameters and fluctuations
+
+          vol   =     0.1000000000E+04    0.0000000000E+00
+          a     =        10.0000000000        0.0000000000
+          b     =        10.0000000000        0.0000000000
+          c     =        10.0000000000        0.0000000000
+          alpha =        90.0000000000        0.0000000000
+          beta  =        90.0000000000        0.0000000000
+          gamma =        90.0000000000        0.0000000000
+    
+ LJ       c        154.5564         32.8420
+
+ lj              154.5564         32.8420
+
+
+ ----------------------------------------------------------------------------
+                          final energies 
+ ----------------------------------------------------------------------------
+
+ break down of energies for box:   1
+
+ total energy                       -0.2447256324E+03
+ reciprocal space coulomb            0.0000000000E+00
+ real space coulomb                  0.0000000000E+00
+ external mfa coulomb                0.0000000000E+00
+ nonbonded two body (vdw)           -0.2447256324E+03
+ bonded two body (pair)              0.0000000000E+00
+ nonbonded three body                0.0000000000E+00
+ bonded three body (angle)           0.0000000000E+00
+ bonded four body (angle)            0.0000000000E+00
+ many body energy                    0.0000000000E+00
+ external potential energy           0.0000000000E+00
+ total virial                        0.0000000000E+00
+ volume                              0.1000000000E+04
+ 
+ long-range correction (vdw)         0.0000000000E+00
+
+ components of energies by  molecule: lj      
+
+ total energy                       -0.2447256324E+03
+ reciprocal space coulomb            0.0000000000E+00
+ real space coulomb - other types    0.0000000000E+00
+ real space coulomb - same type      0.0000000000E+00
+ real space coulomb - self energy    0.0000000000E+00
+ real space coulomb - corection      0.0000000000E+00
+ vdw - other types mol               0.0000000000E+00
+ vdw - same type mol                -0.2447256324E+03
+ bonded two body (pair)              0.0000000000E+00
+ nonbonded three body                0.0000000000E+00
+ bonded three body (angle)           0.0000000000E+00
+ many body energy                    0.0000000000E+00
+ external potential energy           0.0000000000E+00
+
+
+ ----------------------------------------------------------------------------
+                          processing data 
+ ----------------------------------------------------------------------------
+
+ attempted molecule inserts  =       5015
+ successful molecule inserts =       2442      0.48693918
+
+ attempted & empty molecule deletes  =       4985         0
+ successful molecule deletes =       2274      0.45616851
+
+
+ pure simulation time (excl. init.):  0 h :  0 m :  0.126 s
+
+
+
+
+ total elapsed time   (incl. init.):  0 h :  0 m :  0.128 s
+
+
+ normal exit 
